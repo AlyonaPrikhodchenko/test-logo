@@ -1,9 +1,23 @@
-// Файл шрифров. Например:
+@font-face {
+  font-family: "Helvetika";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Helvetica.woff2") format("woff2"), url("../fonts/Helvetica.woff") format("woff");
+  font-display: swap;
+}
 
-// @font-face {
-//   font-family: "Helvetika Neue";
-//   font-style: normal;
-//   font-weight: 400;
-//   src: url("../fonts/Helvetica-Neue-Regular.woff2") format("woff2"), url("../fonts/Helvetica-Neue-Regular.woff") format("woff");
-//   font-display: swap;
-// }
+@font-face {
+  font-family: "Helvetika";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Helvetica-Bold.woff2") format("woff2"), url("../fonts/Helvetica-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/Inter-Black.woff2") format("woff2"), url("../fonts/Inter-Black.woff") format("woff");
+  font-display: swap;
+}

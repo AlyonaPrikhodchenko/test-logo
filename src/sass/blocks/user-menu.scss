@@ -1,0 +1,13 @@
+.user-menu {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 170px;
+}
+
+.user-menu__item {
+  margin-right: 30px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

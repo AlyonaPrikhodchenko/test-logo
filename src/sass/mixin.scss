@@ -1,10 +1,27 @@
-// Файл миксинов: Например:
+@mixin fontHelvetica ($fs, $lh, $color) {
+  font-family: "Helvetika", "Arial", sans-serif;
+  font-style: normal;
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: 400;
+  color: $color;
+}
 
-// @mixin fontHelvetica ($weight: 400, $fs, $color, $lh, $fst: normal) {
-//   font-family: "Helvetika Neue", "Arial", sans-serif;
-//   font-style: $fst;
-//   font-size: $fs;
-//   line-height: $lh;
-//   font-weight: $weight;
-//   color: $color;
-// }
+@mixin fontHelveticaBold ($fs, $lh, $color) {
+  font-family: "Helvetika", "Arial", sans-serif;
+  font-style: normal;
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: 700;
+  color: $color;
+}
+
+@mixin fontInter ($fs, $lh, $color) {
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: 900;
+  color: $color;
+}
+

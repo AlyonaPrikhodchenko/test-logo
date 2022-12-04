@@ -1,0 +1,19 @@
+.navigation__list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 280px;
+}
+
+.navigation__item {
+  margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.navigation__link {
+  text-decoration: none;
+
+  @include fontHelvetica(14px, 18px, $color-black);
+}

@@ -1,7 +1,9 @@
-// Файл блока контейнера. Например:
+.container {
+  width: 75%;
+  max-width: 1200px;
+  margin: 0 auto;
 
-// .container {
-//   width: 90%;
-//   max-width: 1200px;
-//   margin: 0 auto;
-// }
+  @media (max-width: $tel) {
+    width: 90%;
+  }
+}

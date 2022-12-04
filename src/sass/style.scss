@@ -1,7 +1,9 @@
 @import "./variables";
 @import "./fonts";
 @import "./mixin";
-@import "./visually-hidden";
 @import "./container";
-@import "./blocks/page";
+@import "./global/global";
+@import "./blocks/header";
+@import "./blocks/navigation";
+@import "./blocks/user-menu";
 

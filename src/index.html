@@ -1,12 +1,69 @@
 <!DOCTYPE html>
-<html class="page" lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Logo</title>
     <link rel="stylesheet" href="./css/style.min.css">
 </head>
-<body class="page__body">
-    Hello world!
+<body>
+    <header class="header">
+      <div class="header__container container">
+        <nav class="header__navigation navigation">
+          <ul class="navigation__list reset-list">
+            <li class="navigation__item">
+              <a class="navigation__link" href="#">Каталог</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="#">О компании</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="#">Магазины</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__logo logo">
+          <a class="logo__link" href="#">
+            <img class="logo__img"src="./img/content/logo.svg" width="100" height="22" alt="Переход на главную старницу. Логотип сайта.">
+          </a>
+        </div>
+
+        <ul class="header__user-menu user-menu reset-list">
+          <li class="user-menu__item">
+            <a class="user-menu__link"  href="#">
+              <svg width="20" height="20">
+                <use href="./img/sprite.svg#search"></use>
+              </svg>
+              <span class="visually-hidden">Поиск по сайту.</span>
+            </a>
+          </li>
+          <li class="user-menu__item">
+            <a class="user-menu__link"  href="#">
+              <svg width="20" height="20">
+                <use href="./img/sprite.svg#login"></use>
+              </svg>
+              <span class="visually-hidden">Вход в личный аккаунт.</span>
+            </a>
+          </li>
+          <li class="user-menu__item">
+            <a class="user-menu__link"  href="#">
+              <svg width="20" height="20">
+                <use href="./img/sprite.svg#favorite"></use>
+              </svg>
+              <span class="visually-hidden">Избранное.</span>
+            </a>
+          </li>
+          <li class="user-menu__item">
+            <a class="user-menu__link"  href="#">
+              <svg width="20" height="20">
+                <use href="./img/sprite.svg#bag"></use>
+              </svg>
+              <span class="visually-hidden">Корзина.</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
 </body>
 </html>
