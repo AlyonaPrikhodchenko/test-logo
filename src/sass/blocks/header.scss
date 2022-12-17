@@ -1,10 +1,70 @@
 .header {
+  position: relative;
+  margin-bottom: 50px;
   padding: 25px 0;
   border-bottom: 0.5px solid $color-gray;
+
+  @media (max-width: $tel) {
+    margin-bottom: 24px;
+    border-bottom: none;
+  }
 }
 
 .header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: $tel) {
+    justify-content: flex-start;
+  }
+}
+
+.header__burger {
+  position: relative;
+  display: none;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+
+  border: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 32px;
+    height: 2px;
+    background-color: $color-black;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 9px;
+    width: 18px;
+    height: 2px;
+    background-color: $color-black;
+  }
+
+  &--close {
+    &::before {
+      top: 50%;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 50%;
+      width: 32px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  @media (max-width: $tel) {
+    display: flex;
+  }
 }

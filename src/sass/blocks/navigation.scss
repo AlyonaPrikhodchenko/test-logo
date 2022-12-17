@@ -1,7 +1,28 @@
+.navigation {
+  @media (max-width: $tel) {
+    display: none;
+
+    &--hidden {
+      position: absolute;
+      top: 100%;
+      right: 15px;
+      display: block;
+      width: 90%;
+      max-width: 320px;
+      background-color: $color-white;
+      box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
 .navigation__list {
   display: flex;
   flex-wrap: wrap;
   max-width: 280px;
+
+  @media (max-width: $tel) {
+    flex-direction: column;
+  }
 }
 
 .navigation__item {
@@ -13,7 +34,30 @@
 }
 
 .navigation__link {
+  display: inline-block;
+  vertical-align: middle;
   text-decoration: none;
 
   @include fontHelvetica(14px, 18px, $color-black);
+
+  &[href]:focus-visible {
+    outline-offset: 2px;
+    outline: 1px solid $color-black;
+  }
+
+  &[href]:hover {
+    color: $color-dark-gray;
+    transition: 0.3s;
+  }
+
+  &[href]:active {
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+
+  @media (max-width: $tel) {
+    padding: 12px 16px;
+
+    @include fontHelvetica(16px, 21px, $color-black);
+  }
 }

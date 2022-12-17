@@ -1,0 +1,7 @@
+.main__breadcrumbs {
+  margin-bottom: 40px;
+
+  @media (max-width: $tel) {
+    margin-bottom: 32px;
+  }
+}

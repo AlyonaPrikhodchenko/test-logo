@@ -25,14 +25,14 @@
 
         <div class="header__logo logo">
           <a class="logo__link" href="#">
-            <img class="logo__img"src="./img/content/logo.svg" width="100" height="22" alt="Переход на главную старницу. Логотип сайта.">
+            <img class="logo__img" src="./img/content/logo.svg" width="100" height="22" alt="Переход на главную старницу. Логотип сайта.">
           </a>
         </div>
 
         <ul class="header__user-menu user-menu reset-list">
           <li class="user-menu__item">
             <a class="user-menu__link"  href="#">
-              <svg width="20" height="20">
+              <svg width="18" height="18" stroke="#000000">
                 <use href="./img/sprite.svg#search"></use>
               </svg>
               <span class="visually-hidden">Поиск по сайту.</span>
@@ -40,7 +40,7 @@
           </li>
           <li class="user-menu__item">
             <a class="user-menu__link"  href="#">
-              <svg width="20" height="20">
+              <svg width="19" height="19" stroke="#000000">
                 <use href="./img/sprite.svg#login"></use>
               </svg>
               <span class="visually-hidden">Вход в личный аккаунт.</span>
@@ -48,22 +48,101 @@
           </li>
           <li class="user-menu__item">
             <a class="user-menu__link"  href="#">
-              <svg width="20" height="20">
+              <svg width="18" height="16" stroke="#000000">
                 <use href="./img/sprite.svg#favorite"></use>
               </svg>
               <span class="visually-hidden">Избранное.</span>
             </a>
+            <span  class="user-menu__counter">8</span>
           </li>
           <li class="user-menu__item">
             <a class="user-menu__link"  href="#">
-              <svg width="20" height="20">
+              <svg class="user-menu__icon-bag" width="20" height="17" fill="#000000">
                 <use href="./img/sprite.svg#bag"></use>
               </svg>
               <span class="visually-hidden">Корзина.</span>
             </a>
+            <span class="user-menu__counter">4</span>
+          </li>
+        </ul>
+
+        <button class="header__burger" type="button">
+          <span class="visually-hidden">Открыть мобильное меню.</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="main__breadcrumbs breadcrumbs container">
+        <ul class="breadcrumbs__list reset-list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Главная</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link breadcrumbs__link--current">Оформление заказа</a>
           </li>
         </ul>
       </div>
-    </header>
+
+      <section class="main__order order container">
+        <form action="https://echo.htmlacademy.ru/" method="post">
+          <div class="order__header">
+            <h1 class="order__title">Оформление заказа</h1>
+            <p class="order__login">
+              <span>Есть аккаунт?</span>
+              <a href="#">Войти</a>
+            </p>
+          </div>
+
+          <fieldset class="order__products products">
+            <legend class="products__legend form-legend">3 товара на сумму 25 000 ₽</legend>
+          </fieldset>
+
+          <fieldset class="order__contacts contacts">
+            <legend class="contacts__legend form-legend">Контактные данные</legend>
+          </fieldset>
+
+          <fieldset class="order__map map">Map</fieldset>
+
+          <fieldset class="order__payment payment">
+            <legend class="payment__legend form-legend">Оплата</legend>
+            <div class="payment__wrapper">
+              <label class="payment__label">
+                <input class="payment__input visually-hidden" type="radio" name="payment" value="Cash courier" checked>
+                <span class="payment__mark"></span>
+                <span class="payment__value">Наличными курьеру</span>
+              </label>
+              <label class="payment__label">
+                <input class="payment__input visually-hidden" type="radio" name="payment" value="Card courier">
+                <span class="payment__mark"></span>
+                <span class="payment__value">Картой курьеру</span>
+              </label>
+              <label class="payment__label">
+                <input class="payment__input visually-hidden" type="radio" name="payment" value="Card online">
+                <span class="payment__mark"></span>
+                <span class="payment__value">Картой онлайн</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="order__comment comment">
+            <legend class="comment__legend form-legend">Комментарий к заказу</legend>
+
+            <div class="comment__inner">
+              <label class="comment__label visually-hidden" for="comment-textarea">Напишите комментарий к заказу.</label>
+              <textarea class="comment__field" rows="3" placeholder="Комментарий к заказу" id="comment-textarea"></textarea>
+            </div>
+            <span class="comment__text">Использовано&nbsp;<output class="comment__counter" for="comment-textarea">0</output>/142 символов</span>
+          </fieldset>
+
+          <fieldset class="order__submit submit">Submit</fieldset>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      FOOTER
+    </footer>
+
 </body>
 </html>

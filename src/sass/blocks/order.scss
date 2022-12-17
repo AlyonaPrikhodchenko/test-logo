@@ -1,0 +1,116 @@
+.order form {
+  display: grid;
+  align-items: start;
+  gap: 40px;
+  grid-template-columns: 1fr 400px;
+  grid-template-areas: "title submit" "products submit" "contacts map" "payment map" "comments .";
+  margin-bottom: 73px;
+
+  @media (max-width: $tel) {
+    grid-template-areas: none;
+    grid-template-columns: auto;
+  }
+}
+
+.order__header {
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  margin-bottom: 20px;
+  grid-area: title;
+
+  @media (max-width: $tel) {
+    grid-area: auto;
+  }
+}
+
+.order__title {
+  margin: 0;
+  margin-right: 20px;
+
+  @include fontHelvetica(40px, 42px, $color-black);
+}
+
+.order__login {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.order__login span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+
+  @include fontHelvetica(14px, 18px, $color-dark-gray);
+}
+
+.order__login a {
+  text-decoration: none;
+
+  @include fontHelvetica(14px, 18px, $color-black);
+
+  &[href]:focus-visible {
+    outline-offset: 2px;
+    outline: 1px solid $color-black;
+  }
+
+  &[href]:hover {
+    color: $color-dark-gray;
+    transition: 0.3s;
+  }
+
+  &[href]:active {
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+}
+
+.order__products {
+  grid-area: products;
+
+  @media (max-width: $tel) {
+    grid-area: auto;
+  }
+}
+
+
+.order__contacts {
+  grid-area: contacts;
+
+  @media (max-width: $tel) {
+    grid-area: auto;
+  }
+}
+
+.order__map {
+  grid-area: map;
+
+  @media (max-width: $tel) {
+    grid-area: auto;
+  }
+}
+
+.order__payment {
+  grid-area: payment;
+
+  @media (max-width: $tel) {
+    grid-area: auto;
+  }
+}
+
+.order__comment {
+  grid-area: comments;
+
+  @media (max-width: $tel) {
+    grid-area: auto;
+  }
+}
+
+.order__submit {
+  grid-area: submit;
+
+  @media (max-width: $tel) {
+    grid-area: auto;
+  }
+}

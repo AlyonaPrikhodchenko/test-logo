@@ -1,0 +1,6 @@
+.form-legend {
+  padding: 0;
+  margin-bottom: 30px;
+
+  @include fontHelvetica(28px, 30px, $color-black);
+}
