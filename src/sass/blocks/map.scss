@@ -1,4 +1,15 @@
 .map {
   padding: 0;
-  border: 1px solid blueviolet;
+  border: none;
+}
+
+.map__wrapper {
+  width: 400px;
+  height: 450px;
+}
+
+.map__frame {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
