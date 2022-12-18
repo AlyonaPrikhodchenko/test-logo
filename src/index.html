@@ -95,7 +95,167 @@
           </div>
 
           <fieldset class="order__products products">
-            <legend class="products__legend form-legend">3 товара на сумму 25 000 ₽</legend>
+            <legend class="products__legend form-legend"><span class="products__count">3</span> товара на сумму <span class="products__price">25 000</span> ₽</legend>
+
+            <ul class="products__list reset-list">
+              <li class="products__item">
+                <div class="products__item-image">
+                  <picture>
+                    <source type="image/webp" srcset="./img/content/product-1.webp 1x, ./img/content/product-1@2x.webp 2x">
+                    <img class="products__media" src="./img/content/product-1.jpg" srcset="./img/content/product-1@2x.jpg 2x" width="130" height="160" loading="lazy" alt="product-1.">
+                  </picture>
+                </div>
+                <h2 class="products__item-title">Утепленная стеганная куртка женская Top Hills</h2>
+                <div class="products__inform">
+                  <dl class="products__inform-list">
+                    <div class="products__inform-wrapper">
+                      <dt class="products__inform-name">Артикул</dt>
+                      <dd class="products__inform-data">512-05</dd>
+                    </div>
+                    <div class="products__inform-wrapper">
+                      <dt class="products__inform-name">Сезон</dt>
+                      <dd class="products__inform-data">Осень-зима</dd>
+                    </div>
+                  </dl>
+
+                  <div class="products__size-wrapper">
+                    <label>
+                      <input class="products__size-input visually-hidden" type="radio" name="size-1" value="XS">
+                      <span class="products__size">XS</span>
+                    </label>
+                    <label>
+                      <input class="products__size-input visually-hidden" type="radio" name="size-1" value="S">
+                      <span class="products__size">S</span>
+                    </label>
+                    <label>
+                      <input class="products__size-input visually-hidden" type="radio" name="size-1" value="M" checked>
+                      <span class="products__size">M</span>
+                    </label>
+                    <label>
+                      <input class="products__size-input visually-hidden" type="radio" name="size-1" value="L">
+                      <span class="products__size">L</span>
+                    </label>
+                    <label>
+                      <input class="products__size-input visually-hidden" type="radio" name="size-1" value="XL">
+                      <span class="products__size">XL</span>
+                    </label>
+                  </div>
+
+                  <div class="products__color-wrapper">
+                    <label>
+                      <input class="products__color-input visually-hidden" type="radio" name="color-1" value="black" checked>
+                      <span class="products__color-mark products__color-mark--black"></span>
+                    </label>
+                    <label>
+                      <input class="products__color-input visually-hidden" type="radio" name="color-1" value="blue">
+                      <span class="products__color-mark products__color-mark--blue"></span>
+                    </label>
+                    <label>
+                      <input class="products__color-input visually-hidden" type="radio" name="color-1" value="brown">
+                      <span class="products__color-mark products__color-mark--brown"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="products__result">
+                  <p class="products__result-price">
+                    <span class="products__result-price-old"><span>12 000</span> ₽</span>
+                    <span class="products__result-price-new"><b>10 000</b> ₽</span>
+                  </p>
+                  <div class="products__result-count">
+                    <button class="products__result-button products__result-button--minus" type="button">
+                      <span class="visually-hidden">Уменьшить количество.</span>
+                    </button>
+                    <span class="products__result-quantity">2</span>
+                    <button class="products__result-button products__result-button--plus" type="button">
+                      <span class="visually-hidden">Увеличить количество.</span>
+                    </button>
+                  </div>
+                  <p class="products__result-price">
+                    <span class="products__result-price-old"><span>24 000</span> ₽</span>
+                    <span class="products__result-price-new"><b>20 000</b> ₽</span>
+                  </p>
+                </div>
+
+                <button class="products__item-delete">
+                  <span class="visually-hidden">Удалить товар из корзины.</span>
+                </button>
+              </li>
+
+              <li class="products__item">
+                <div class="products__item-image">
+                  <picture>
+                    <source type="image/webp" srcset="./img/content/product-2.webp 1x, ./img/content/product-2@2x.webp 2x">
+                    <img class="products__media" src="./img/content/product-2.jpg" srcset="./img/content/product-2@2x.jpg 2x" width="130" height="160" loading="lazy" alt="product-1.">
+                  </picture>
+                </div>
+                <h2 class="products__item-title">Вязанная шапка Zolla</h2>
+                <div class="products__inform">
+                  <dl class="products__inform-list">
+                    <div class="products__inform-wrapper">
+                      <dt class="products__inform-name">Артикул</dt>
+                      <dd class="products__inform-data">891-256</dd>
+                    </div>
+                    <div class="products__inform-wrapper">
+                      <dt class="products__inform-name">Сезон</dt>
+                      <dd class="products__inform-data">Демисезон</dd>
+                    </div>
+                  </dl>
+
+                  <div class="products__size-wrapper">
+                    <label>
+                      <input class="products__size-input visually-hidden" type="radio" name="size" value="XS">
+                      <span class="products__size">XS</span>
+                    </label>
+                    <label>
+                      <input class="products__size-input visually-hidden" type="radio" name="size" value="S" checked>
+                      <span class="products__size">S</span>
+                    </label>
+                    <label>
+                      <input class="products__size-input visually-hidden" type="radio" name="size" value="M">
+                      <span class="products__size">M</span>
+                    </label>
+                    <label>
+                      <input class="products__size-input visually-hidden" type="radio" name="size" value="L">
+                      <span class="products__size">L</span>
+                    </label>
+                    <label>
+                      <input class="products__size-input visually-hidden" type="radio" name="size" value="XL">
+                      <span class="products__size">XL</span>
+                    </label>
+                  </div>
+
+                  <div class="products__color-wrapper">
+                    <label>
+                      <input class="products__color-input visually-hidden" type="radio" name="color" value="black" checked>
+                      <span class="products__color-mark products__color-mark--black"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="products__result">
+                  <p class="products__result-price">
+                    <span class="products__result-price-new"><b>500</b> ₽</span>
+                  </p>
+                  <div class="products__result-count">
+                    <button class="products__result-button products__result-button--minus" type="button" disabled>
+                      <span class="visually-hidden">Уменьшить количество.</span>
+                    </button>
+                    <span class="products__result-quantity">1</span>
+                    <button class="products__result-button products__result-button--plus" type="button">
+                      <span class="visually-hidden">Увеличить количество.</span>
+                    </button>
+                  </div>
+                  <p class="products__result-price">
+                    <span class="products__result-price-new"><b>500</b> ₽</span>
+                  </p>
+                </div>
+
+                <button class="products__item-delete">
+                  <span class="visually-hidden">Удалить товар из корзины.</span>
+                </button>
+              </li>
+            </ul>
           </fieldset>
 
           <fieldset class="order__contacts contacts">
@@ -117,15 +277,17 @@
                 <input class="contacts__input" type="email" name="email" placeholder="Email" required>
                 <span class="contacts__placeholder">Email</span>
               </label>
-              <label class="contacts__label contacts__label--address">
-                <input class="contacts__input" type="text" name="address" placeholder="Адрес доставки" required>
-                <span class="contacts__placeholder">Адрес доставки</span>
+              <div class="contacts__label contacts__label--address">
+                <label>
+                  <input class="contacts__input" type="text" name="address" placeholder="Адрес доставки" required>
+                  <span class="contacts__placeholder">Адрес доставки</span>
+                </label>
                 <button class="contacts__button" type="button">
                   <svg width="20" height="20" stroke="#6e6e6e">
                     <use href="./img/sprite.svg#search"></use>
                   </svg>
                 </button>
-              </label>
+              </div>
             </div>
           </fieldset>
 
@@ -170,33 +332,37 @@
           </fieldset>
 
           <fieldset class="order__submit submit">
-            <dl class="submit__list">
-              <div class="submit__wrapper">
-                <dt class="submit__name">Товары</dt>
-                <dd class="submit__price"><span>24 500</span> ₽</dd>
-              </div>
-              <div class="submit__wrapper">
-                <dt class="submit__name">Скидки</dt>
-                <dd class="submit__price">-<span>4 500</span> ₽</dd>
-              </div>
-              <div class="submit__wrapper">
-                <dt class="submit__name submit__name--little">Акции</dt>
-                <dd class="submit__price submit__price--little">-<span>4 000</span> ₽</dd>
-              </div>
-              <div class="submit__wrapper">
-                <dt class="submit__name submit__name--little">Промокод</dt>
-                <dd class="submit__price submit__price--little">-<span>500</span> ₽</dd>
-              </div>
-              <div class="submit__wrapper">
-                <dt class="submit__name">Доставка</dt>
-                <dd class="submit__price"><span>200</span> ₽</dd>
-              </div>
-            </dl>
+            <ul class="submit__list reset-list">
+              <li class="submit__item">
+                <span class="submit__name">Товары</span>
+                <span class="submit__price"><b>24 500</b> ₽</span>
+              </li>
+              <li class="submit__item">
+                <ul class="submit__list submit__list--discounts reset-list">
+                  <li class="submit__item">
+                    <span class="submit__name">Скидка</span>
+                    <span class="submit__price">-<b>4 500</b> ₽</span>
+                  </li>
+                  <li class="submit__item">
+                    <span class="submit__name submit__name--little">Акции</span>
+                    <span class="submit__price submit__price--little">-<span>4 000</span> ₽</span>
+                  </li>
+                  <li class="submit__item">
+                    <span class="submit__name submit__name--little">Промокод</span>
+                    <span class="submit__price submit__price--little">-<span>500</span> ₽</span>
+                  </li>
+                </ul>
+              </li>
+              <li class="submit__item">
+                <span class="submit__name">Доставка</span>
+                <span class="submit__price"><b>200</b> ₽</span>
+              </li>
+            </ul>
 
             <div class="submit__checkbox">
               <label class="submit__label-checkbox">
-                <span>Получить товар со склада</span>
-                <input type="checkbox" name="warehouse" required>
+                <span class="submit__text-checkbox">Получить товар со склада</span>
+                <input class="submit__input-checkbox visually-hidden" type="checkbox" name="warehouse" required>
                 <span class="submit__mark"></span>
               </label>
               <p class="submit__text">Сроки получения могут измениться</p>
@@ -205,15 +371,20 @@
             <div class="submit__footer">
               <dl class="submit__result">
                 <dt class="submit__result-name">Итого:</dt>
-                <dd class="submit__result-price"><span>20 700</span> ₽</dd>
+                <dd class="submit__result-price"><b>20 700</b> ₽</dd>
               </dl>
 
-              <label class="submit__promo-label">
-                <input class="submit__promo-input" type="text" name="promo" placeholder="Введите промокод">
-              </label>
+              <div class="submit__promo">
+                <label class="submit__promo-label">
+                  <input class="submit__promo-input" type="text" name="promo" placeholder="Введите промокод">
+                </label>
+                <button class="submit__promo-button submit__promo-button--hidden" type="button"><b>Применить</b></button>
+              </div>
 
-              <button class="submit__button" type="submit">Оформить заказ</button>
-              <p class="submit__politics">Нажимая кнопку “Оформить заказ”, Вы соглашаетесь с <a class="submit__politics-link" href="#">политикой конфиденциальности.</a></p>
+              <div class="submit__footer-send">
+                <button class="submit__button" type="submit"><b>Оформить заказ</b></button>
+                <p class="submit__politics">Нажимая кнопку “Оформить заказ”, Вы соглашаетесь с <a class="submit__politics-link" href="#">политикой конфиденциальности.</a></p>
+              </div>
             </div>
           </fieldset>
         </form>

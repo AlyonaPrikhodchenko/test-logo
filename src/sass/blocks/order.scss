@@ -3,6 +3,7 @@
   align-items: start;
   gap: 40px;
   grid-template-columns: 1fr 400px;
+  grid-template-rows: auto 1fr auto auto auto;
   grid-template-areas: "title submit" "products submit" "contacts map" "payment map" "comments .";
   margin-bottom: 73px;
 
