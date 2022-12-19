@@ -7,9 +7,16 @@
   width: 400px;
   height: 450px;
 
+  @media (max-width: $tablet) {
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+  }
+
   @media (max-width: $tel) {
     width: 288px;
     height: 220px;
+    margin: 0 auto;
   }
 }
 

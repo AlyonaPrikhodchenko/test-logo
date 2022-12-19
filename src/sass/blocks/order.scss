@@ -7,6 +7,10 @@
   grid-template-areas: "title submit" "products submit" "contacts map" "payment map" "comments .";
   margin-bottom: 73px;
 
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr 350px;
+  }
+
   @media (max-width: $tel) {
     grid-template-areas: none;
     grid-template-columns: auto;
@@ -34,10 +38,15 @@
 
   @include fontHelvetica(40px, 42px, $color-black);
 
-  @media (max-width: $tel) {
+  @media (max-width: $tablet) {
     width: 100%;
-    margin-right: 0;
     margin-bottom: 10px;
+  }
+
+  @media (max-width: $tel) {
+    // width: 100%;
+    margin-right: 0;
+    // margin-bottom: 10px;
 
     @include fontHelvetica(28px, 30px, $color-black);
   }

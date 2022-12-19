@@ -4,6 +4,11 @@
   row-gap: 20px;
   padding: 30px 20px;
   border: 1px solid $color-dark-gray;
+
+  @media (max-width: $tel) {
+    row-gap: 12px;
+    padding: 24px 16px;
+  }
 }
 
 .submit__list {
@@ -19,6 +24,11 @@
     padding-bottom: 0;
     border-bottom: none;
   }
+
+  @media (max-width: $tel) {
+    row-gap: 12px;
+    padding-bottom: 12px;
+  }
 }
 
 .submit__item {
@@ -33,6 +43,14 @@
   &--little {
     @include fontHelvetica(16px, 21px, $color-black);
   }
+
+  @media (max-width: $tel) {
+    @include fontHelvetica(16px, 21px, $color-black);
+
+    &--little {
+      @include fontHelvetica(12px, 15px, $color-black);
+    }
+  }
 }
 
 .submit__price {
@@ -40,6 +58,14 @@
 
   &--little {
     @include fontHelvetica(16px, 21px, $color-black);
+  }
+
+  @media (max-width: $tel) {
+    @include fontHelvetica(16px, 21px, $color-black);
+
+    &--little {
+      @include fontHelvetica(12px, 15px, $color-black);
+    }
   }
 }
 
@@ -50,6 +76,11 @@
 .submit__checkbox {
   padding-bottom: 20px;
   border-bottom: 1px solid $color-gray;
+
+
+  @media (max-width: $tel) {
+    padding-bottom: 12px;
+  }
 }
 
 .submit__label-checkbox {
@@ -57,10 +88,23 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 7px;
+
+  @media (max-width: $tel) {
+    margin-bottom: 0;
+    padding: 5px 0;
+  }
 }
 
 .submit__text-checkbox {
   @include fontHelvetica(20px, 24px, $color-black);
+
+  @media (max-width: $tablet) {
+    @include fontHelvetica(18px, 22px, $color-black);
+  }
+
+  @media (max-width: $tel) {
+    @include fontHelvetica(16px, 21px, $color-black);
+  }
 }
 
 .submit__mark {
@@ -104,6 +148,10 @@
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 20px;
+
+  @media (max-width: $tel) {
+    row-gap: 12px;
+  }
 }
 
 .submit__result {
@@ -116,10 +164,26 @@
 
 .submit__result-name {
   @include fontHelvetica(28px, 30px, $color-black);
+
+  @media (max-width: $tablet) {
+    @include fontHelvetica(24px, 26px, $color-black);
+  }
+
+  @media (max-width: $tel) {
+    @include fontHelvetica(20px, 24px, $color-black);
+  }
 }
 
 .submit__result-price {
   @include fontHelvetica(28px, 30px, $color-black);
+
+  @media (max-width: $tablet) {
+    @include fontHelvetica(24px, 26px, $color-black);
+  }
+
+  @media (max-width: $tel) {
+    @include fontHelvetica(20px, 24px, $color-black);
+  }
 }
 
 .submit__promo {
@@ -137,6 +201,16 @@
 
   &::placeholder {
     @include fontHelvetica(16px, 21px, $color-gray);
+  }
+
+  @media (max-width: $tablet) {
+    padding: 15px 20px;
+  }
+
+  @media (max-width: $tel) {
+    padding: 12px 16px;
+
+    @include fontHelvetica(20px, 24px, $color-black);
   }
 }
 

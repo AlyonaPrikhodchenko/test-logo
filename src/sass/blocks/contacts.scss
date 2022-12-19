@@ -8,9 +8,13 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 
-  @media (max-width: $tel) {
+  @media (max-width: $tablet) {
     grid-template-columns: 1fr;
   }
+
+  // @media (max-width: $tel) {
+  //   grid-template-columns: 1fr;
+  // }
 }
 
 .contacts__label {
@@ -23,11 +27,17 @@
     grid-column: 1/3;
   }
 
-  @media (max-width: $tel) {
+  @media (max-width: $tablet) {
     &--address {
       grid-column: auto;
     }
   }
+
+  // @media (max-width: $tel) {
+  //   &--address {
+  //     grid-column: auto;
+  //   }
+  // }
 }
 
 .contacts__button {
