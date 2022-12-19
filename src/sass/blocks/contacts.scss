@@ -11,10 +11,6 @@
   @media (max-width: $tablet) {
     grid-template-columns: 1fr;
   }
-
-  // @media (max-width: $tel) {
-  //   grid-template-columns: 1fr;
-  // }
 }
 
 .contacts__label {
@@ -32,12 +28,6 @@
       grid-column: auto;
     }
   }
-
-  // @media (max-width: $tel) {
-  //   &--address {
-  //     grid-column: auto;
-  //   }
-  // }
 }
 
 .contacts__button {

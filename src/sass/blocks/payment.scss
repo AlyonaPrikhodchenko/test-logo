@@ -61,3 +61,8 @@
     border-radius: 50%;
   }
 }
+
+.payment__input:focus-visible + .payment__mark {
+  outline-offset: 2px;
+  outline: 1px solid $color-black;
+}

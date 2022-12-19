@@ -1,4 +1,254 @@
 .footer {
-  padding: 30px 0 5px;
-  border: 1px solid blueviolet;
+  padding: 30px 0 15px;
+  border-top: 0.5px solid $color-gray;
+
+  @media (max-width: $tel) {
+    padding: 15px 0;
+  }
+}
+
+.footer__container {
+  position: relative;
+}
+
+.footer__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &--top {
+    margin-bottom: 100px;
+  }
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+
+    &--top {
+      margin-bottom: 40px;
+    }
+
+    &--bottom {
+      display: grid;
+      grid-template-columns: auto;
+      justify-content: center;
+      justify-items: center;
+      row-gap: 15px;
+    }
+  }
+
+  @media (max-width: $tel) {
+    align-items: start;
+
+    &--bottom {
+      row-gap: 10px;
+    }
+  }
+}
+
+.footer__subscription {
+  @media (max-width: $tablet) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: $tel) {
+    margin-bottom: 30px;
+  }
+}
+
+.footer__links-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 116px;
+
+  @media (max-width: $tel) {
+    width: 100%;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 10px;
+  }
+}
+
+.footer__links-button {
+  display: none;
+
+  @media (max-width: $tel) {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: left;
+    background-color: transparent;
+    border: 1px solid $color-dark-gray;
+
+    @include fontHelvetica(16px, 21px, $color-black);
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      width: 20px;
+      height: 2px;
+      background-color: #000000;
+      transition: all 1s;
+    }
+
+    &--close::after {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.footer__links-content {
+  &--nav {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 116px;
+  }
+
+  @media (max-width: $tel) {
+    height: 0;
+    overflow: hidden;
+    transition: all 1s;
+
+    &--nav {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      row-gap: 10px;
+    }
+  }
+}
+
+.footer__links-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 15px;
+
+  @media (max-width: $tel) {
+    width: 100%;
+    row-gap: 5px;
+  }
+}
+
+.footer__links-link {
+  text-decoration: none;
+
+  @include fontHelvetica(14px, 18px, $color-black);
+
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 1px solid $color-black;
+  }
+
+  &:hover {
+    color: $color-gray;
+    transition: 0.3s;
+  }
+
+  &:active {
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+
+  @media (max-width: $tel) {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    border-bottom: 1px solid $color-dark-gray;
+
+    @include fontHelvetica(16px, 21px, $color-black);
+  }
+}
+
+.footer__rights {
+  margin: 0;
+
+  @include fontHelvetica(14px, 18px, $color-dark-gray);
+
+  @media (max-width: $tel) {
+    @include fontHelvetica(12px, 14px, $color-dark-gray);
+  }
+}
+
+.footer__offer {
+  text-decoration: none;
+
+  @include fontHelvetica(14px, 18px, $color-dark-gray);
+
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 1px solid $color-black;
+  }
+
+  &:hover {
+    color: $color-gray;
+    transition: 0.3s;
+  }
+
+  &:active {
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+
+  @media (max-width: $tel) {
+    @include fontHelvetica(12px, 14px, $color-dark-gray);
+  }
+}
+
+.footer__politics {
+  text-decoration: none;
+
+  @include fontHelvetica(14px, 18px, $color-dark-gray);
+
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 1px solid $color-black;
+  }
+
+  &:hover {
+    color: $color-gray;
+    transition: 0.3s;
+  }
+
+  &:active {
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+
+  @media (max-width: $tel) {
+    @include fontHelvetica(12px, 14px, $color-dark-gray);
+  }
+}
+
+.footer__maker {
+  display: flex;
+  align-items: center;
+}
+
+.footer__maker-text {
+  margin-right: 10px;
+
+  @include fontHelvetica(14px, 18px, $color-black);
+
+  @media (max-width: $tel) {
+    @include fontHelvetica(12px, 14px, $color-black);
+  }
+}
+
+.footer__maker-link {
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 1px solid $color-black;
+  }
+
+  &:hover {
+    opacity: 0.7;
+    transition: 0.3s;
+  }
+
+  &:active {
+    opacity: 0.4;
+    transition: 0.3s;
+  }
 }

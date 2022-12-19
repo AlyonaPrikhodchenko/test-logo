@@ -390,7 +390,7 @@
             <div class="submit__checkbox">
               <label class="submit__label-checkbox">
                 <span class="submit__text-checkbox">Получить товар со склада</span>
-                <input class="submit__input-checkbox visually-hidden" type="checkbox" name="warehouse" required>
+                <input class="submit__input-checkbox visually-hidden" type="checkbox" name="warehouse">
                 <span class="submit__mark"></span>
               </label>
               <p class="submit__text">Сроки получения могут измениться</p>
@@ -419,9 +419,98 @@
       </section>
     </main>
 
-    <footer class="footer container">
-      FOOTER
+    <footer class="footer">
+      <div class="footer__container container">
+        <div class="footer__wrapper footer__wrapper--top">
+          <div class="footer__subscription subscription">
+            <p class="subscription__title">Скидка 10% за подписку на наши новости</p>
+            <form class="subscription__form" action="https://echo.htmlacademy.ru/" method="post">
+              <label>
+                <input class="subscription__input" type="email" name="email-subscription" placeholder="Введите Email">
+              </label>
+              <button class="subscription__submit" type="submit">
+                <svg width="20" height="20" stroke="#000000">
+                  <use href="./img/sprite.svg#search"></use>
+                </svg>
+                <b>Подписаться</b>
+              </button>
+            </form>
+            <p class="subscription__politics">Нажимая кнопку “Оформить заказ”, Вы соглашаетесь с <a class="subscription__politics-link" href="#">политикой конфиденциальности.</a></p>
+          </div>
+          <div class="footer__links-wrapper">
+            <div class="footer__links">
+              <button class="footer__links-button footer__links-button--close" type="button">Меню</button>
+              <div class="footer__links-content footer__links-content--nav footer__links-content--hidden">
+                <ul class="footer__links-list reset-list">
+                  <li class="footer__links-item">
+                    <a class="footer__links-link" href="#">Каталог</a>
+                  </li>
+                  <li class="footer__links-item">
+                    <a class="footer__links-link" href="#">О компании</a>
+                  </li>
+                  <li class="footer__links-item">
+                    <a class="footer__links-link" href="#">Магазины</a>
+                  </li>
+                  <li class="footer__links-item">
+                    <a class="footer__links-link" href="#">Новости</a>
+                  </li>
+                </ul>
+                <ul class="footer__links-list reset-list">
+                  <li class="footer__links-item">
+                    <a class="footer__links-link" href="#">Оплата и доставка</a>
+                  </li>
+                  <li class="footer__links-item">
+                    <a class="footer__links-link" href="#">Условия возврата</a>
+                  </li>
+                  <li class="footer__links-item">
+                    <a class="footer__links-link" href="#">Бонусная система</a>
+                  </li>
+                  <li class="footer__links-item">
+                    <a class="footer__links-link" href="#">Подарочный сертификат</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__links">
+              <button class="footer__links-button footer__links-button--close" type="button">Cоц.сети</button>
+              <div class="footer__links-content">
+                <ul class="footer__links-list reset-list">
+                  <li class="footer__links-item">
+                    <a class="footer__links-link" href="#">Telegram</a>
+                  </li>
+                  <li class="footer__links-item">
+                    <a class="footer__links-link" href="#">WhatsApp</a>
+                  </li>
+                  <li class="footer__links-item">
+                    <a class="footer__links-link" href="#">Youtube</a>
+                  </li>
+                  <li class="footer__links-item">
+                    <a class="footer__links-link" href="#">VK</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__wrapper footer__wrapper--bottom">
+          <p class="footer__rights">© All rights reserved</p>
+          <a class="footer__offer" href="#">Публичная оферта</a>
+          <a class="footer__politics" href="#">Политика конфиденциальности</a>
+          <p class="footer__maker">
+            <span class="footer__maker-text">Сделано в студии</span>
+            <a class="footer__maker-link" href="https://5corners.ru/" target="_blank">
+              <img class="footer__maker-logo" src="./img/content/logo-studio.svg" width="90" height="21" alt="Логотип и переход на страницу студии 5 углов">
+            </a>
+          </p>
+        </div>
+
+        <button class="footer__arrow arrow-up">
+          <img src="./img/icons/arrow-up.svg" width="12" alt="22" alt="Стрелка вверх.">
+          <span class="visually-hidden">Подняться в начало страницы.</span>
+        </button>
+      </div>
     </footer>
 
+    <script src="./js/script.js" type="module"></script>
 </body>
 </html>

@@ -77,7 +77,6 @@
   padding-bottom: 20px;
   border-bottom: 1px solid $color-gray;
 
-
   @media (max-width: $tel) {
     padding-bottom: 12px;
   }
@@ -135,6 +134,11 @@
     background-color: $color-black;
     transition: 0.3s;
   }
+}
+
+.submit__input-checkbox:focus-visible + .submit__mark {
+  outline-offset: 2px;
+  outline: 1px solid $color-black;
 }
 
 .submit__text {
