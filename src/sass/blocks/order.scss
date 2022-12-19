@@ -3,25 +3,28 @@
   align-items: start;
   gap: 40px;
   grid-template-columns: 1fr 400px;
-  grid-template-rows: auto 1fr auto auto auto;
+  grid-template-rows: 1fr auto auto auto;
   grid-template-areas: "title submit" "products submit" "contacts map" "payment map" "comments .";
   margin-bottom: 73px;
 
   @media (max-width: $tel) {
     grid-template-areas: none;
     grid-template-columns: auto;
+    gap: 0;
   }
 }
 
 .order__header {
   display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
   margin: 0;
   margin-bottom: 20px;
   grid-area: title;
 
   @media (max-width: $tel) {
     grid-area: auto;
+    margin-bottom: 32px;
   }
 }
 
@@ -30,6 +33,14 @@
   margin-right: 20px;
 
   @include fontHelvetica(40px, 42px, $color-black);
+
+  @media (max-width: $tel) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+
+    @include fontHelvetica(28px, 30px, $color-black);
+  }
 }
 
 .order__login {
@@ -72,6 +83,7 @@
 
   @media (max-width: $tel) {
     grid-area: auto;
+    margin-bottom: 40px;
   }
 }
 
@@ -81,6 +93,7 @@
 
   @media (max-width: $tel) {
     grid-area: auto;
+    margin-bottom: 16px;
   }
 }
 
@@ -89,6 +102,7 @@
 
   @media (max-width: $tel) {
     grid-area: auto;
+    margin-bottom: 40px;
   }
 }
 
@@ -97,6 +111,7 @@
 
   @media (max-width: $tel) {
     grid-area: auto;
+    margin-bottom: 40px;
   }
 }
 
@@ -105,6 +120,7 @@
 
   @media (max-width: $tel) {
     grid-area: auto;
+    margin-bottom: 40px;
   }
 }
 

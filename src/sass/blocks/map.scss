@@ -6,10 +6,16 @@
 .map__wrapper {
   width: 400px;
   height: 450px;
+
+  @media (max-width: $tel) {
+    width: 288px;
+    height: 220px;
+  }
 }
 
 .map__frame {
   width: 100%;
   height: 100%;
   border: none;
+  object-fit: cover;
 }

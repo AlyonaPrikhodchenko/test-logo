@@ -1,0 +1,46 @@
+.button-delete {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 14px;
+    height: 1.5px;
+    background-color: $color-black;
+    border-radius: 5px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 14px;
+    height: 1.5px;
+    background-color: $color-black;
+    border-radius: 5px;
+  }
+
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 1px solid $color-black;
+  }
+
+  &:hover::before {
+    background-color: $color-dark-gray;
+  }
+
+  &:hover::after {
+    background-color: $color-dark-gray;
+  }
+}
