@@ -3,6 +3,14 @@
   border: none;
 }
 
+.comment--warning .comment__field {
+  border-color: $color-red;
+}
+
+.comment--warning .comment__counter {
+  color: $color-red;
+}
+
 .comment__inner {
   display: block;
   width: 100%;
@@ -22,16 +30,6 @@
 
   &::placeholder {
     @include fontHelvetica(16px, 21px, $color-dark-gray);
-  }
-
-  &:focus-visible {
-    outline-offset: 2px;
-    outline: 1px solid $color-black;
-  }
-
-  &:hover {
-    color: $color-dark-gray;
-    transition: 0.3s;
   }
 }
 

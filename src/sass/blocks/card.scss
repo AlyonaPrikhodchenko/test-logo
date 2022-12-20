@@ -261,10 +261,10 @@
 }
 
 .card__result-price-new {
-  @include fontHelvetica(20px, 24px, $color-black);
+  @include fontHelveticaBold(20px, 24px, $color-black);
 
   @media (max-width: $tel) {
-    @include fontHelvetica(16px, 21px, $color-black);
+    @include fontHelveticaBold(16px, 21px, $color-black);
   }
 }
 
@@ -390,6 +390,16 @@
 
   @media (max-width: $tel) {
     margin-bottom: 4px;
+  }
+}
+
+.card__recover-text a {
+  text-decoration: none;
+
+  @include fontHelveticaBold(16px, 21px, $color-dark-gray);
+
+  @media (max-width: $tablet) {
+    @include fontHelveticaBold(14px, 18px, $color-dark-gray);
   }
 }
 

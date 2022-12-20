@@ -1,4 +1,10 @@
 import {initAccordion, mediaQuery} from "./accordion-phone.js";
+import {countsLengthComment} from "./comment-length.js";
+import {transfersPlaceholder} from "./transfer-placeholder.js";
 
-mediaQuery.addEventListener('change', initAccordion);
+transfersPlaceholder();
+
+countsLengthComment();
+
 initAccordion(mediaQuery);
+mediaQuery.addEventListener('change', initAccordion);

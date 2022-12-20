@@ -54,14 +54,14 @@
 }
 
 .submit__price {
-  @include fontHelvetica(20px, 24px, $color-black);
+  @include fontHelveticaBold(20px, 24px, $color-black);
 
   &--little {
     @include fontHelvetica(16px, 21px, $color-black);
   }
 
   @media (max-width: $tel) {
-    @include fontHelvetica(16px, 21px, $color-black);
+    @include fontHelveticaBold(16px, 21px, $color-black);
 
     &--little {
       @include fontHelvetica(12px, 15px, $color-black);
@@ -179,14 +179,14 @@
 }
 
 .submit__result-price {
-  @include fontHelvetica(28px, 30px, $color-black);
+  @include fontHelveticaBold(28px, 30px, $color-black);
 
   @media (max-width: $tablet) {
-    @include fontHelvetica(24px, 26px, $color-black);
+    @include fontHelveticaBold(24px, 26px, $color-black);
   }
 
   @media (max-width: $tel) {
-    @include fontHelvetica(20px, 24px, $color-black);
+    @include fontHelveticaBold(20px, 24px, $color-black);
   }
 }
 
@@ -249,18 +249,19 @@
   &:disabled {
     color: $color-dark-gray;
     background-color: $color-gray;
+    cursor: default;
   }
 
-  &:focus-visible {
+  &:focus-visible:not(:disabled) {
     outline-offset: 2px;
     outline: 1px solid $color-black;
   }
 
-  &:hover {
+  &:hover:not(:disabled) {
     background-color: $color-dark-gray;
   }
 
-  &:active {
+  &:active:not(:disabled) {
     opacity: 0.8;
   }
 }

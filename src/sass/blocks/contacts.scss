@@ -78,8 +78,8 @@
   background-color: $color-white;
 
   @include fontHelvetica(12px, 15px, $color-dark-gray);
-}
 
-.contacts__input:focus + .contacts__placeholder {
-  display: inline-block;
+  &--hidden {
+    display: block;
+  }
 }
