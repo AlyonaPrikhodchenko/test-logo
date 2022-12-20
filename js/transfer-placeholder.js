@@ -1,0 +1,1 @@
+const transfersPlaceholder=()=>{const e=document.querySelectorAll(".contacts__input"),t=document.querySelectorAll(".contacts__placeholder");if(e)for(let l=0;l<e.length;l++){const c=e[l];let n=t[l];c.addEventListener("input",(()=>{c.value.length>0?n.classList.add("contacts__placeholder--hidden"):n.classList.remove("contacts__placeholder--hidden")}))}};export{transfersPlaceholder};
