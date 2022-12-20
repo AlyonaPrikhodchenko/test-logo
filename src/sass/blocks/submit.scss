@@ -259,10 +259,12 @@
 
   &:hover:not(:disabled) {
     background-color: $color-dark-gray;
+    transition: 0.3s;
   }
 
   &:active:not(:disabled) {
     opacity: 0.8;
+    transition: 0.3s;
   }
 }
 

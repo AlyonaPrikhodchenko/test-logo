@@ -1,0 +1,5 @@
+const opensBurgerMenu = () => {
+
+}
+
+export {opensBurgerMenu};
