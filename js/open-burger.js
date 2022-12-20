@@ -1,0 +1,1 @@
+const opensBurgerMenu=()=>{};export{opensBurgerMenu};

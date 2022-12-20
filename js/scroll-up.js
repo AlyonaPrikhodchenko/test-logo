@@ -1,0 +1,1 @@
+const scrollsUp=()=>{const o=document.querySelector(".arrow-up");o&&o.addEventListener("click",(()=>{window.scrollTo(0,0)}))};export{scrollsUp};
