@@ -1,0 +1,1 @@
+const initAddressHints=()=>{$("#address").suggestions({token:"e2eeb413a16819871f748c5de52aaaeee3059d46",type:"ADDRESS",onSelect:function(e){}})};export{initAddressHints};
