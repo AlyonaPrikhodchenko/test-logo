@@ -13,16 +13,15 @@ const initMap = () => {
   // Создание карты
   let myMap = new ymaps.Map('map', {
     center: [coordsDefault.lat, coordsDefault.lng],
-    zoom: 12
+    zoom: 7
   });
 
-  // Вытягивает координаты широты и долготы адреса
-
+  // Вытягивает координаты широты и долготы адреса из поля ввода
   const poolsCoords = (addressArr) => {
     for (let el of addressArr) {
       const coords = el.GeoObject.Point.pos;
       const resultCoords = coords.split(' ');
-      return resultCoords;
+      return [resultCoords[1], resultCoords[0]];
     }
   }
 
@@ -39,49 +38,29 @@ const initMap = () => {
     myMap.geoObjects.add(placemark);
   }
 
-  // Вызывыет функцию генерации пина при событии клика на ENTER
-  input.addEventListener('keydown', async (e) => {
+  // Функцию генерации пина, смены центра карты и очистки от старого пина
+  const bindsInputwithMap = async (i) => {
+    myMap.geoObjects.removeAll();
+    const addressItems = await getData(i);
+    const addressItem = addressItems.response.GeoObjectCollection.featureMember;
+    const coords = poolsCoords(addressItem);
+    myMap.setCenter(coords);
+    myMap.setZoom(5);
+    generatesPin(coords);
+  }
+
+  // Вызывыет функцию генерации пина, смены центра карты и очистку от старого пина при событии клика на ENTER
+  input.addEventListener('keydown', (e) => {
     if (isEnterKey(e)) {
       e.preventDefault();
-      const addressItems = await getData(e.target);
-      const addressItem = addressItems.response.GeoObjectCollection.featureMember;
-      const coords = poolsCoords(addressItem);
-      console.log(coords)
-      generatesPin(coords);
+      bindsInputwithMap(e.target);
     }
   });
 
-  // Вызывыет функцию генерации пина при событии клика по кнопке поиска
+  // Вызывыет функцию генерации пина, смены центра карты и очистку от старого пина при событии клика по кнопке поиска
   addressButton.addEventListener('click', async () => {
-    const addressItems = await getData(input);
-    const addresItem = addressItems.response.GeoObjectCollection.featureMember;
-    generatesPin(addresItem);
+    bindsInputwithMap(input);
   })
-
-
-
-  // const input = document.querySelector('#address');
-
-  // input.addEventListener('input', onInput)
-
-  // const onInput = (e) => {
-  //   changeCoords(e.target.value)
-  // }
-
-  // const changeCoords = (address) => {
-  //   const coords = getCoordsFromAddress(address);
-  //   // ну и что-то там дальше, чтобы на карте всё обновилось)))
-  // }
-
-  // placemark.events.add('dragend', function (e) {
-  //   const pinCoords = e.get('target').geometry.getCoordinates();
-  //   addressInput.value = pinCoords;
-  //   console.log(e.target)
-  // });
-
-  // addressButton.addEventListener('click', () => {
-  //   placemark.geometry.Point = addressInput.value;
-  // })
 }
 
 export {initMap};
