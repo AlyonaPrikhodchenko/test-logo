@@ -29,7 +29,7 @@ const initMap = () => {
   const generatesPin = (coords) => {
     let placemark = new ymaps.Placemark(coords, {}, {
       iconLayout: 'default#image',
-      iconImageHref: '../img/icons/map-pin.svg',
+      iconImageHref: './img/icons/map-pin.svg',
       iconImageSize: [27, 39],
       iconImageOffset: [-10, -39],
       draggable: true
