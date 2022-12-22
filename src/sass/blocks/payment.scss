@@ -48,6 +48,7 @@
 
 .payment__input:checked + .payment__mark {
   position: relative;
+  z-index: -1;
 
   &::before {
     content: "";

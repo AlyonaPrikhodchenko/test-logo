@@ -1,16 +1,22 @@
 import {initAccordion, mediaQuery} from "./accordion-phone.js";
 import {countsLengthComment} from "./comment-length.js";
-import {opensBurgerMenu} from "./open-burger.js";
+import {initAddressHints} from "./dadata.js";
+// import {opensBurgerMenu} from "./open-burger.js";
 import {scrollsUp} from "./scroll-up.js";
 import {transfersPlaceholder} from "./transfer-placeholder.js";
+import {initMap} from "./yandex-map.js";
 
-opensBurgerMenu();
+// opensBurgerMenu();
+window.addEventListener('DOMContentLoaded', () => {
+  initAddressHints();
+  ymaps.ready(initMap);
+  transfersPlaceholder();
 
-transfersPlaceholder();
+  countsLengthComment();
 
-countsLengthComment();
+  scrollsUp();
 
-scrollsUp();
+  initAccordion(mediaQuery);
+  mediaQuery.addEventListener('change', initAccordion);
+})
 
-initAccordion(mediaQuery);
-mediaQuery.addEventListener('change', initAccordion);
