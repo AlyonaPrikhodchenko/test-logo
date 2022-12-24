@@ -169,7 +169,7 @@
 
                 <div class="card__result" data-counters>
                   <p class="card__result-price">
-                    <span class="card__result-price-old"><span data-price>12 000</span> ₽</span>
+                    <span class="card__result-price-old"><span>12 000</span> ₽</span>
                     <span class="card__result-price-new"><span data-price>10 000</span> ₽</span>
                   </p>
                   <div class="card__result-count">
@@ -184,8 +184,8 @@
                     </button>
                   </div>
                   <p class="card__result-price">
-                    <span class="card__result-price-old"><span data-price-all>24 000</span> ₽</span>
-                    <span class="card__result-price-new"><span data-price-all>20 000</span> ₽</span>
+                    <span class="card__result-price-old"><span data-total-price-old>24 000</span> ₽</span>
+                    <span class="card__result-price-new"><span data-total-price>20 000</span> ₽</span>
                   </p>
                 </div>
 
@@ -275,14 +275,14 @@
                       <span class="visually-hidden">Уменьшить количество.</span>
                     </button>
                     <label class="card__result-quantity">
-                      <input class="card__result-quantity-value" type="number" name="counter" value="1">
+                      <input class="card__result-quantity-value" type="number" name="counter" data-price="500" value="1">
                     </label>
                     <button class="card__result-button card__result-button--plus" type="button">
                       <span class="visually-hidden">Увеличить количество.</span>
                     </button>
                   </div>
                   <p class="card__result-price">
-                    <span class="card__result-price-new"><span>500</span> ₽</span>
+                    <span class="card__result-price-new"><span data-total-price>500</span> ₽</span>
                   </p>
                 </div>
 
@@ -380,7 +380,7 @@
           <ul class="submit__list reset-list">
             <li class="submit__item">
               <span class="submit__name">Товары</span>
-              <span class="submit__price"><span>24 500</span> ₽</span>
+              <span class="submit__price"><span id="total-price-items">24 500</span> ₽</span>
             </li>
             <li class="submit__item">
               <ul class="submit__list submit__list--discounts reset-list">
@@ -416,7 +416,7 @@
           <div class="submit__footer">
             <dl class="submit__result">
               <dt class="submit__result-name">Итого:</dt>
-              <dd class="submit__result-price"><span>20 700</span> ₽</dd>
+              <dd class="submit__result-price"><span id="total-price">20 700</span> ₽</dd>
             </dl>
 
             <div class="submit__promo">
