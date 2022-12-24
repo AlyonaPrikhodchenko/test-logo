@@ -1,4 +1,4 @@
-const formatNumber = (x) => x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, '');
+// const formatNumber = (x) => x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, '');
 
 const getItemPrice = (input) => input.value * input.dataset.price;
 
@@ -54,25 +54,8 @@ const initCounter = () => {
       }
     })
 
-    console.log(totalCost)
     totalPrice.textContent = totalCost;
-    console.log(totalPrice.textContent)
   }
 }
 
 export {initCounter};
-
-
-// let prices = counter.querySelectorAll('[data-price]');
-// let pricesAll = counter.querySelectorAll('[data-price-all]');
-
-// prices.forEach(price => {
-//   let priceInt = parseInt(price.textContent.replace(/\s/g, ''));
-
-//   pricesAll.forEach(priceAll => {
-//     let priceIntAll = parseInt(priceAll.textContent.replace(/\s/g, ''));
-
-//     console.log(priceIntAll = (priceInt *= valueInt));
-//     priceAll.textContent = priceIntAll;
-//   })
-// })

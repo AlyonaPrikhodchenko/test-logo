@@ -99,13 +99,12 @@
         </div>
 
         <fieldset class="order__products products">
-          <legend class="products__legend form-legend"><span class="products__count">3</span> товара на сумму <span
-              class="products__price">25 000</span> ₽</legend>
+          <legend class="products__legend form-legend"><span class="products__count">3</span> товара на сумму <span class="products__price">25 000</span> ₽</legend>
 
           <ul class="products__list reset-list">
             <li class="products__item card">
               <div class="card__content">
-                <div class="card__image">
+                <a class="card__image" href="#">
                   <picture>
                     <source type="image/webp"
                       srcset="./img/content/product-1.webp 1x, ./img/content/product-1@2x.webp 2x">
@@ -113,7 +112,7 @@
                       srcset="./img/content/product-1@2x.jpg 2x" width="130" height="160" loading="lazy"
                       alt="product-1.">
                   </picture>
-                </div>
+                </a>
                 <h2 class="card__title">Утепленная стеганная куртка женская Top Hills</h2>
                 <div class="card__inform">
                   <dl class="card__inform-list">
@@ -193,27 +192,19 @@
                   <span class="visually-hidden">Удалить товар из корзины.</span>
                 </button>
               </div>
-
-              <div class="card__recover card__recover--hidden">
+            </li>
+            <!-- <li class="products__item card">
+              <div class="card__recover">
                 <p class="card__recover-text">Товар <b>Наименование товара</b> был удален из корзины.</p>
                 <button class="card__recover-button" type="button">Восстановить</button>
                 <button class="card__recover-delete button-delete" type="button">
                   <span class="visually-hidden">Удалить оповещение о восстановлении товара.</span>
                 </button>
               </div>
-            </li>
-            <li class="products__item card">
-              <div class="card__recover">
-                <p class="card__recover-text">Товар <a href="#">Наименование товара</a> был удален из корзины.</p>
-                <button class="card__recover-button" type="button">Восстановить</button>
-                <button class="card__recover-delete button-delete" type="button">
-                  <span class="visually-hidden">Удалить оповещение о восстановлении товара.</span>
-                </button>
-              </div>
-            </li>
+            </li> -->
             <li class="products__item card">
               <div class="card__content">
-                <div class="card__image">
+                <a class="card__image" href="#">
                   <picture>
                     <source type="image/webp"
                       srcset="./img/content/product-2.webp 1x, ./img/content/product-2@2x.webp 2x">
@@ -221,7 +212,7 @@
                       srcset="./img/content/product-2@2x.jpg 2x" width="130" height="160" loading="lazy"
                       alt="product-1.">
                   </picture>
-                </div>
+                </a>
                 <h2 class="card__title">Вязанная шапка Zolla</h2>
                 <div class="card__inform">
                   <dl class="card__inform-list">
@@ -290,12 +281,95 @@
                   <span class="visually-hidden">Удалить товар из корзины.</span>
                 </button>
               </div>
+            </li>
+            <li class="products__item card">
+              <div class="card__content">
+                <a class="card__image" href="#">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="./img/content/product-1.webp 1x, ./img/content/product-1@2x.webp 2x">
+                    <img class="card__media" src="./img/content/product-1.jpg"
+                      srcset="./img/content/product-1@2x.jpg 2x" width="130" height="160" loading="lazy"
+                      alt="product-1.">
+                  </picture>
+                </a>
+                <h2 class="card__title">Утепленная стеганная куртка женская Top Hills</h2>
+                <div class="card__inform">
+                  <dl class="card__inform-list">
+                    <div class="card__inform-wrapper">
+                      <dt class="card__inform-name">Артикул</dt>
+                      <dd class="card__inform-data">512-05</dd>
+                    </div>
+                    <div class="card__inform-wrapper">
+                      <dt class="card__inform-name">Сезон</dt>
+                      <dd class="card__inform-data">Осень-зима</dd>
+                    </div>
+                  </dl>
 
-              <div class="card__recover card__recover--hidden">
-                <p class="card__recover-text">Товар <b>Наименование товара</b> был удален из корзины.</p>
-                <button class="card__recover-button" type="button">Восстановить</button>
-                <button class="card__recover-delete button-delete" type="button">
-                  <span class="visually-hidden">Удалить оповещение о восстановлении товара.</span>
+                  <div class="card__size-wrapper">
+                    <label>
+                      <input class="card__size-input visually-hidden" type="radio" name="size-1" value="XS">
+                      <span class="card__size">XS</span>
+                    </label>
+                    <label>
+                      <input class="card__size-input visually-hidden" type="radio" name="size-1" value="S">
+                      <span class="card__size">S</span>
+                    </label>
+                    <label>
+                      <input class="card__size-input visually-hidden" type="radio" name="size-1" value="M" checked>
+                      <span class="card__size">M</span>
+                    </label>
+                    <label>
+                      <input class="card__size-input visually-hidden" type="radio" name="size-1" value="L">
+                      <span class="card__size">L</span>
+                    </label>
+                    <label>
+                      <input class="card__size-input visually-hidden" type="radio" name="size-1" value="XL">
+                      <span class="card__size">XL</span>
+                    </label>
+                  </div>
+
+                  <div class="card__color-wrapper">
+                    <label>
+                      <input class="card__color-input visually-hidden" type="radio" name="color-1" value="black"
+                        checked>
+                      <span class="card__color-mark card__color-mark--black"></span>
+                    </label>
+                    <label>
+                      <input class="card__color-input visually-hidden" type="radio" name="color-1" value="blue">
+                      <span class="card__color-mark card__color-mark--blue"></span>
+                    </label>
+                    <label>
+                      <input class="card__color-input visually-hidden" type="radio" name="color-1" value="brown">
+                      <span class="card__color-mark card__color-mark--brown"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="card__result" data-counters>
+                  <p class="card__result-price">
+                    <span class="card__result-price-old"><span>12 000</span> ₽</span>
+                    <span class="card__result-price-new"><span data-price>10 000</span> ₽</span>
+                  </p>
+                  <div class="card__result-count">
+                    <button class="card__result-button card__result-button--minus" type="button">
+                      <span class="visually-hidden">Уменьшить количество.</span>
+                    </button>
+                    <label class="card__result-quantity">
+                      <input class="card__result-quantity-value" type="number" name="counter" data-old-price="12000" data-price="10000" value="2">
+                    </label>
+                    <button class="card__result-button card__result-button--plus" type="button">
+                      <span class="visually-hidden">Увеличить количество.</span>
+                    </button>
+                  </div>
+                  <p class="card__result-price">
+                    <span class="card__result-price-old"><span data-total-price-old>24 000</span> ₽</span>
+                    <span class="card__result-price-new"><span data-total-price>20 000</span> ₽</span>
+                  </p>
+                </div>
+
+                <button class="card__delete button-delete" type="button">
+                  <span class="visually-hidden">Удалить товар из корзины.</span>
                 </button>
               </div>
             </li>
@@ -530,6 +604,17 @@
       </button>
     </div>
   </footer>
+
+  <!-- Блок восстановления товара после удаления из корзины -->
+  <template id="recover">
+    <div class="card__recover">
+      <p class="card__recover-text">Товар <b id="card-name">Наименование товара</b> был удален из корзины.</p>
+      <button class="card__recover-button" type="button">Восстановить</button>
+      <button class="card__recover-delete button-delete" type="button">
+        <span class="visually-hidden">Удалить оповещение о восстановлении товара.</span>
+      </button>
+    </div>
+  </template>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.12.0/dist/js/jquery.suggestions.min.js"></script>
