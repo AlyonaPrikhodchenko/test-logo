@@ -1,4 +1,9 @@
-// const formatNumber = (x) => x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, '');
+const formatNumber = (number) => {
+  const arrSymbols = String(number).split('');
+  arrSymbols.splice(-3, 0, ' ');
+  const numberSpace = arrSymbols.join('');
+  return numberSpace;
+}
 
 const getItemPrice = (input) => input.value * input.dataset.price;
 
@@ -24,11 +29,11 @@ const initCounter = () => {
 
         plus.addEventListener('click', () => {
           input.value++
-          totalPriceItem.textContent = String(input.value * input.dataset.price);
+          totalPriceItem.textContent = formatNumber(input.value * input.dataset.price);
           totalPrice.textContent = Number(totalPrice.textContent) + Number(input.dataset.price);
 
           if (input.dataset.oldPrice) {
-            totalPriceItemOld.textContent = String(input.value * input.dataset.oldPrice);
+            totalPriceItemOld.textContent = formatNumber(input.value * input.dataset.oldPrice);
           }
           if (input.value > 1) {
             minus.disabled = false;
@@ -37,11 +42,11 @@ const initCounter = () => {
 
         minus.addEventListener('click', () => {
           input.value--;
-          totalPriceItem.textContent = String(input.value * input.dataset.price);
+          totalPriceItem.textContent = formatNumber(input.value * input.dataset.price);
           totalPrice.textContent = Number(totalPrice.textContent) - Number(input.dataset.price);
 
           if (input.dataset.oldPrice) {
-            totalPriceItemOld.textContent = String(input.value * input.dataset.oldPrice);
+            totalPriceItemOld.textContent = formatNumber(input.value * input.dataset.oldPrice);
           }
 
           if (input.value <= 1) {
@@ -51,10 +56,13 @@ const initCounter = () => {
         })
 
         totalCost += getItemPrice(input);
+        formatNumber(totalCost)
       }
     })
 
+
     totalPrice.textContent = totalCost;
+
   }
 }
 
