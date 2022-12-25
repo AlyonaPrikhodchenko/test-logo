@@ -1,0 +1,1 @@
+const changesName=()=>{document.querySelector(".products__legend");let e=document.querySelector("#products-count");document.querySelector("#products-price");const t=document.querySelector(".products__list").children;console.log(t.length),e.textContent=t.length};export{changesName};
