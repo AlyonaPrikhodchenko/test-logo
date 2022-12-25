@@ -5,9 +5,10 @@ import {initCounter} from "./modules/init-counter.js";
 import {mediaQueries, opensBurgerMenu} from "./modules/open-burger.js";
 import {restoresCard} from "./modules/recover-card.js";
 import {scrollsUp} from "./modules/scroll-up.js";
+import {sendsForm} from "./modules/send-form.js";
 import {transfersPlaceholder} from "./modules/transfer-placeholder.js";
 import {initMap} from "./modules/yandex-map.js";
-
+import {validationForm} from "./modules/validation-form.js"
 
 mediaQueries.addEventListener('change', opensBurgerMenu);
 opensBurgerMenu(mediaQueries);
@@ -21,6 +22,8 @@ window.addEventListener('DOMContentLoaded', () => {
   transfersPlaceholder();
 
   countsLengthComment();
+  validationForm();
+  sendsForm();
 
   scrollsUp();
 })
