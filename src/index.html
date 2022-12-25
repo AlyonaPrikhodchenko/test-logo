@@ -33,42 +33,45 @@
         </a>
       </div>
 
-      <ul class="header__user-menu user-menu reset-list">
-        <li class="user-menu__item">
-          <a class="user-menu__link" href="#">
-            <svg width="18" height="18" stroke="#000000">
-              <use href="./img/sprite.svg#search"></use>
-            </svg>
-            <span class="visually-hidden">Поиск по сайту.</span>
-          </a>
-        </li>
-        <li class="user-menu__item">
-          <a class="user-menu__link" href="#">
-            <svg width="19" height="19" stroke="#000000">
-              <use href="./img/sprite.svg#login"></use>
-            </svg>
-            <span class="visually-hidden">Вход в личный аккаунт.</span>
-          </a>
-        </li>
-        <li class="user-menu__item">
-          <a class="user-menu__link" href="#">
-            <svg width="18" height="16" stroke="#000000">
-              <use href="./img/sprite.svg#favorite"></use>
-            </svg>
-            <span class="visually-hidden">Избранное.</span>
-          </a>
-          <span class="user-menu__counter">8</span>
-        </li>
-        <li class="user-menu__item">
-          <a class="user-menu__link" href="#">
-            <svg class="user-menu__icon-bag" width="20" height="17" fill="#000000">
+      <div class="header__user-menu">
+        <ul class="header__user-menu-list user-menu reset-list">
+          <li class="user-menu__item">
+            <a class="user-menu__link" href="#">
+              <svg width="18" height="18" stroke="#000000">
+                <use href="./img/sprite.svg#search"></use>
+              </svg>
+              <span class="visually-hidden">Поиск по сайту</span>
+            </a>
+          </li>
+          <li class="user-menu__item">
+            <a class="user-menu__link" href="#">
+              <svg width="19" height="19" stroke="#000000">
+                <use href="./img/sprite.svg#login"></use>
+              </svg>
+              <span class="visually-hidden">Вход в аккаунт</span>
+            </a>
+          </li>
+          <li class="user-menu__item">
+            <a class="user-menu__link" href="#">
+              <svg width="18" height="16" stroke="#000000">
+                <use href="./img/sprite.svg#favorite"></use>
+              </svg>
+              <span class="visually-hidden">Избранное</span>
+            </a>
+            <span class="user-menu__counter">8</span>
+          </li>
+        </ul>
+
+        <div class="header__user-menu-bag bag">
+          <a class="bag__link" href="#">
+            <svg class="bag__icon" width="20" height="17" fill="#000000">
               <use href="./img/sprite.svg#bag"></use>
             </svg>
             <span class="visually-hidden">Корзина.</span>
           </a>
-          <span class="user-menu__counter">4</span>
-        </li>
-      </ul>
+          <span class="bag__counter">4</span>
+        </div>
+      </div>
 
       <button class="header__burger" type="button">
         <span class="visually-hidden">Открыть мобильное меню.</span>
@@ -99,7 +102,7 @@
         </div>
 
         <fieldset class="order__products products">
-          <legend class="products__legend form-legend"><span class="products__count">3</span> товара на сумму <span class="products__price">25 000</span> ₽</legend>
+          <legend class="products__legend form-legend"><span class="products__count" id="products-count">3</span> товара на сумму <span class="products__price" id="products-price">25 000</span> ₽</legend>
 
           <ul class="products__list reset-list">
             <li class="products__item card">
@@ -445,7 +448,7 @@
           <ul class="submit__list reset-list">
             <li class="submit__item">
               <span class="submit__name">Товары</span>
-              <span class="submit__price"><span id="total-price-items">24 500</span> ₽</span>
+              <span class="submit__price"><span id="total-price-items" data-total="24500">24 500</span> ₽</span>
             </li>
             <li class="submit__item">
               <ul class="submit__list submit__list--discounts reset-list">

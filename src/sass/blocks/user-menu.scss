@@ -1,11 +1,12 @@
 .user-menu {
   display: flex;
   flex-wrap: wrap;
-  max-width: 170px;
+  margin-right: 30px;
 
   @media (max-width: $tel) {
-    margin-left: auto;
-    margin-right: 24px;
+    flex-direction: column;
+    align-items: start;
+    max-width: 280px;
   }
 }
 
@@ -18,9 +19,8 @@
   }
 
   @media (max-width: $tel) {
-    &:not(:last-child) {
-      display: none;
-    }
+    width: 100%;
+    margin-right: 0;
   }
 }
 
@@ -44,14 +44,35 @@
   }
 
   @media (max-width: $tel) {
-    width: 28px;
-    height: 28px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 12px 16px;
+
+    @include fontHelvetica(16px, 21px, $color-black);
   }
 }
 
 .user-menu__link svg {
   width: 100%;
   height: 100%;
+
+  @media (max-width: $tel) {
+    display: none;
+  }
+}
+
+.user-menu__link > span.visually-hidden {
+  @media (max-width: $tel) {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    white-space: wrap;
+    clip-path: none;
+    clip: none;
+    overflow: visible;
+  }
 }
 
 .user-menu__link:hover svg {
@@ -79,4 +100,8 @@
   border-radius: 50%;
 
   @include fontHelvetica(10px, 8px, $color-white);
+
+  @media (max-width: $tel) {
+    display: none;
+  }
 }

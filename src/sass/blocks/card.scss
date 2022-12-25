@@ -370,7 +370,6 @@
 .card__recover {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   padding: 15px 25px;
   background-color: $color-light-gray;
@@ -385,6 +384,7 @@
 }
 
 .card__recover-text {
+  width: 75%;
   margin: 0;
   margin-right: 25px;
 

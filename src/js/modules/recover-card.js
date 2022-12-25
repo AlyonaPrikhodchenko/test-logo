@@ -2,8 +2,14 @@ const recoverTemplate = document.querySelector('#recover').content.querySelector
 
 const restoresCard = () => {
 
+  // let nameList = document.querySelector('.products__legend');
+  // let productsCounts = document.querySelector('#products-count');
+  // let productsPrice = document.querySelector('#products-price');
+  // const cards = document.querySelectorAll('.card');
 
-  const cards = document.querySelectorAll('.card');
+  const productsList = document.querySelector('.products__list');
+  const cards = Array.from(productsList.children);
+  // productsCounts.textContent = cards.length;
 
   if (cards) {
     cards.forEach(card => {
@@ -37,11 +43,13 @@ const restoresCard = () => {
 
       if (deleteForeverButton) {
         deleteForeverButton.addEventListener('click', () => {
-          card.removeChild(recoverElement);
+          card.remove();
         })
       }
     })
+
   }
+
 }
 
 export {restoresCard}

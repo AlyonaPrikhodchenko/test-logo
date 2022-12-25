@@ -6,6 +6,7 @@
       position: absolute;
       top: 100%;
       right: 15px;
+      z-index: 10;
       display: block;
       width: 90%;
       max-width: 320px;
@@ -29,6 +30,10 @@
   margin-right: 40px;
 
   &:last-child {
+    margin-right: 0;
+  }
+
+  @media (max-width: $tel) {
     margin-right: 0;
   }
 }

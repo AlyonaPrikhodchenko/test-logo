@@ -1,6 +1,6 @@
 const formatNumber = (number) => {
   const arrSymbols = String(number).split('');
-  arrSymbols.splice(-3, 0, ' ');
+  arrSymbols.splice(-3, 0, '\u00A0');
   const numberSpace = arrSymbols.join('');
   return numberSpace;
 }
@@ -31,6 +31,7 @@ const initCounter = () => {
           input.value++
           totalPriceItem.textContent = formatNumber(input.value * input.dataset.price);
           totalPrice.textContent = Number(totalPrice.textContent) + Number(input.dataset.price);
+          console.log(totalCost)
 
           if (input.dataset.oldPrice) {
             totalPriceItemOld.textContent = formatNumber(input.value * input.dataset.oldPrice);
@@ -44,6 +45,7 @@ const initCounter = () => {
           input.value--;
           totalPriceItem.textContent = formatNumber(input.value * input.dataset.price);
           totalPrice.textContent = Number(totalPrice.textContent) - Number(input.dataset.price);
+          console.log(totalCost)
 
           if (input.dataset.oldPrice) {
             totalPriceItemOld.textContent = formatNumber(input.value * input.dataset.oldPrice);
@@ -56,10 +58,8 @@ const initCounter = () => {
         })
 
         totalCost += getItemPrice(input);
-        formatNumber(totalCost)
       }
     })
-
 
     totalPrice.textContent = totalCost;
 
