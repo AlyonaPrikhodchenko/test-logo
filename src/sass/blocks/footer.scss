@@ -72,26 +72,28 @@
   display: none;
 
   @media (max-width: $tel) {
-    position: relative;
-    display: block;
-    width: 100%;
-    padding: 15px 20px;
-    text-align: left;
-    background-color: transparent;
-    border: 1px solid $color-dark-gray;
+    &--js {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 15px 20px;
+      text-align: left;
+      background-color: transparent;
+      border: 1px solid $color-dark-gray;
 
-    @include fontHelvetica(16px, 21px, $color-black);
+      @include fontHelvetica(16px, 21px, $color-black);
 
-    &::after,
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 30px;
-      width: 20px;
-      height: 2px;
-      background-color: #000000;
-      transition: all 1s;
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        width: 20px;
+        height: 2px;
+        background-color: #000000;
+        transition: all 1s;
+      }
     }
 
     &--close::after {
@@ -108,9 +110,11 @@
   }
 
   @media (max-width: $tel) {
-    height: 0;
-    overflow: hidden;
-    transition: all 1s;
+    &--js {
+      height: 0;
+      overflow: hidden;
+      transition: all 1s;
+    }
 
     &--nav {
       grid-template-columns: 1fr;
@@ -128,6 +132,13 @@
   @media (max-width: $tel) {
     width: 100%;
     row-gap: 5px;
+  }
+}
+
+.footer__links-item {
+  @media (max-width: $tel) {
+    width: 100%;
+    border-bottom: 1px solid $color-dark-gray;
   }
 }
 
@@ -155,7 +166,8 @@
     display: block;
     width: 100%;
     padding: 12px 16px;
-    border-bottom: 1px solid $color-dark-gray;
+
+    text-align: center;
 
     @include fontHelvetica(16px, 21px, $color-black);
   }

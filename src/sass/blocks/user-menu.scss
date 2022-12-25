@@ -4,9 +4,15 @@
   margin-right: 30px;
 
   @media (max-width: $tel) {
-    flex-direction: column;
-    align-items: start;
-    max-width: 280px;
+    display: none;
+
+    &--hidden {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      width: 100%;
+      max-width: 100%;
+    }
   }
 }
 

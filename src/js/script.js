@@ -1,4 +1,3 @@
-import {initAccordion, mediaQuery} from "./modules/accordion-phone.js";
 // import {changesName} from "./modules/change-name-list.js";
 import {countsLengthComment} from "./modules/comment-length.js";
 import {initAddressHints} from "./modules/dadata.js";
@@ -24,8 +23,5 @@ window.addEventListener('DOMContentLoaded', () => {
   countsLengthComment();
 
   scrollsUp();
-
-  initAccordion(mediaQuery);
-  mediaQuery.addEventListener('change', initAccordion);
 })
 
