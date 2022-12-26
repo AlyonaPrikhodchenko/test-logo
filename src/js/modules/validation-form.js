@@ -1,6 +1,6 @@
-import {sendsSuccess} from "./send-form.js";
+import {sendsSuccess} from "./send-success.js";
 
-const validationForm = (e) => {
+const validationForm = (form) => {
   let validation = new window.JustValidate('#form-submit');
 
   let tel = document.querySelector('#phone');
@@ -15,7 +15,7 @@ const validationForm = (e) => {
     {
       rule: 'minLength',
       value: 2,
-      errorMessage: 'Минимум 2 символа'
+      errorMessage: 'Минимум 2 символа',
     }
   ])
     .addField('#second-name', [
@@ -59,7 +59,7 @@ const validationForm = (e) => {
       }
     ])
     .onSuccess(() => {
-      sendsSuccess(e)
+      sendsSuccess(form)
     })
 }
 

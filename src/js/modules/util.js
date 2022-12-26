@@ -67,4 +67,18 @@ const showSuccess = () => {
   }, SHOW_TIME);
 };
 
-export {showError, showSuccess, blockSubmitButton, unblockSubmitButton, formSubmit};
+const formatNumber = (number) => {
+  const arrSymbols = String(number).split('');
+  arrSymbols.splice(-3, 0, '\u00A0');
+  const numberSpace = arrSymbols.join('');
+  return numberSpace;
+}
+
+export {
+  showError,
+  showSuccess,
+  blockSubmitButton,
+  unblockSubmitButton,
+  formSubmit,
+  formatNumber
+};

@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Интернет-магазин одежды.">
   <title>Logo</title>
   <link rel="stylesheet" href="./css/style.min.css">
   <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.12.0/dist/css/suggestions.min.css" rel="stylesheet">
@@ -110,86 +111,6 @@
                 <a class="card__image" href="#">
                   <picture>
                     <source type="image/webp"
-                      srcset="./img/content/product-2.webp 1x, ./img/content/product-2@2x.webp 2x">
-                    <img class="card__media" src="./img/content/product-2.jpg"
-                      srcset="./img/content/product-2@2x.jpg 2x" width="130" height="160" loading="lazy"
-                      alt="product-1.">
-                  </picture>
-                </a>
-                <h2 class="card__title">Вязанная шапка Zolla</h2>
-                <div class="card__inform">
-                  <dl class="card__inform-list">
-                    <div class="card__inform-wrapper">
-                      <dt class="card__inform-name">Артикул</dt>
-                      <dd class="card__inform-data">891-256</dd>
-                    </div>
-                    <div class="card__inform-wrapper">
-                      <dt class="card__inform-name">Сезон</dt>
-                      <dd class="card__inform-data">Демисезон</dd>
-                    </div>
-                  </dl>
-
-                  <div class="card__size-wrapper">
-                    <label>
-                      <input class="card__size-input visually-hidden" type="radio" name="size" value="XS">
-                      <span class="card__size">XS</span>
-                    </label>
-                    <label>
-                      <input class="card__size-input visually-hidden" type="radio" name="size" value="S" checked>
-                      <span class="card__size">S</span>
-                    </label>
-                    <label>
-                      <input class="card__size-input visually-hidden" type="radio" name="size" value="M">
-                      <span class="card__size">M</span>
-                    </label>
-                    <label>
-                      <input class="card__size-input visually-hidden" type="radio" name="size" value="L">
-                      <span class="card__size">L</span>
-                    </label>
-                    <label>
-                      <input class="card__size-input visually-hidden" type="radio" name="size" value="XL">
-                      <span class="card__size">XL</span>
-                    </label>
-                  </div>
-
-                  <div class="card__color-wrapper">
-                    <label>
-                      <input class="card__color-input visually-hidden" type="radio" name="color" value="black" checked>
-                      <span class="card__color-mark card__color-mark--black"></span>
-                    </label>
-                  </div>
-                </div>
-
-                <div class="card__result" data-counters>
-                  <p class="card__result-price">
-                    <span class="card__result-price-new"><span>500</span> ₽</span>
-                  </p>
-                  <div class="card__result-count">
-                    <button class="card__result-button card__result-button--minus" type="button">
-                      <span class="visually-hidden">Уменьшить количество.</span>
-                    </button>
-                    <label class="card__result-quantity">
-                      <input class="card__result-quantity-value" type="number" name="counter" data-price="500" value="1" readonly>
-                    </label>
-                    <button class="card__result-button card__result-button--plus" type="button">
-                      <span class="visually-hidden">Увеличить количество.</span>
-                    </button>
-                  </div>
-                  <p class="card__result-price">
-                    <span class="card__result-price-new"><span data-total-price>500</span> ₽</span>
-                  </p>
-                </div>
-
-                <button class="card__delete button-delete" type="button">
-                  <span class="visually-hidden">Удалить товар из корзины.</span>
-                </button>
-              </div>
-            </li>
-            <li class="products__item card">
-              <div class="card__content">
-                <a class="card__image" href="#">
-                  <picture>
-                    <source type="image/webp"
                       srcset="./img/content/product-1.webp 1x, ./img/content/product-1@2x.webp 2x">
                     <img class="card__media" src="./img/content/product-1.jpg"
                       srcset="./img/content/product-1@2x.jpg 2x" width="130" height="160" loading="lazy"
@@ -234,16 +155,15 @@
 
                   <div class="card__color-wrapper">
                     <label>
-                      <input class="card__color-input visually-hidden" type="radio" name="color-1" value="black"
-                        checked>
+                      <input class="card__color-input visually-hidden" type="radio" name="color-1" value="black" checked aria-label="Черный цвет">
                       <span class="card__color-mark card__color-mark--black"></span>
                     </label>
                     <label>
-                      <input class="card__color-input visually-hidden" type="radio" name="color-1" value="blue">
+                      <input class="card__color-input visually-hidden" type="radio" name="color-1" value="blue" aria-label="Синий цвет">
                       <span class="card__color-mark card__color-mark--blue"></span>
                     </label>
                     <label>
-                      <input class="card__color-input visually-hidden" type="radio" name="color-1" value="brown">
+                      <input class="card__color-input visually-hidden" type="radio" name="color-1" value="brown" aria-label="Коричневый цвет">
                       <span class="card__color-mark card__color-mark--brown"></span>
                     </label>
                   </div>
@@ -276,6 +196,86 @@
                 </button>
               </div>
             </li>
+            <li class="products__item card">
+              <div class="card__content">
+                <a class="card__image" href="#">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="./img/content/product-2.webp 1x, ./img/content/product-2@2x.webp 2x">
+                    <img class="card__media" src="./img/content/product-2.jpg"
+                      srcset="./img/content/product-2@2x.jpg 2x" width="130" height="160" loading="lazy"
+                      alt="product-1.">
+                  </picture>
+                </a>
+                <h2 class="card__title">Вязанная шапка Zolla</h2>
+                <div class="card__inform">
+                  <dl class="card__inform-list">
+                    <div class="card__inform-wrapper">
+                      <dt class="card__inform-name">Артикул</dt>
+                      <dd class="card__inform-data">891-256</dd>
+                    </div>
+                    <div class="card__inform-wrapper">
+                      <dt class="card__inform-name">Сезон</dt>
+                      <dd class="card__inform-data">Демисезон</dd>
+                    </div>
+                  </dl>
+
+                  <div class="card__size-wrapper">
+                    <label>
+                      <input class="card__size-input visually-hidden" type="radio" name="size" value="XS">
+                      <span class="card__size">XS</span>
+                    </label>
+                    <label>
+                      <input class="card__size-input visually-hidden" type="radio" name="size" value="S" checked>
+                      <span class="card__size">S</span>
+                    </label>
+                    <label>
+                      <input class="card__size-input visually-hidden" type="radio" name="size" value="M">
+                      <span class="card__size">M</span>
+                    </label>
+                    <label>
+                      <input class="card__size-input visually-hidden" type="radio" name="size" value="L">
+                      <span class="card__size">L</span>
+                    </label>
+                    <label>
+                      <input class="card__size-input visually-hidden" type="radio" name="size" value="XL">
+                      <span class="card__size">XL</span>
+                    </label>
+                  </div>
+
+                  <div class="card__color-wrapper">
+                    <label>
+                      <input class="card__color-input visually-hidden" type="radio" name="color" value="black" checked aria-label="Черный цвет">
+                      <span class="card__color-mark card__color-mark--black"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="card__result" data-counters>
+                  <p class="card__result-price">
+                    <span class="card__result-price-new"><span>500</span> ₽</span>
+                  </p>
+                  <div class="card__result-count">
+                    <button class="card__result-button card__result-button--minus" type="button">
+                      <span class="visually-hidden">Уменьшить количество.</span>
+                    </button>
+                    <label class="card__result-quantity">
+                      <input class="card__result-quantity-value" type="number" name="counter" data-price="500" value="1" readonly>
+                    </label>
+                    <button class="card__result-button card__result-button--plus" type="button">
+                      <span class="visually-hidden">Увеличить количество.</span>
+                    </button>
+                  </div>
+                  <p class="card__result-price">
+                    <span class="card__result-price-new"><span data-total-price>500</span> ₽</span>
+                  </p>
+                </div>
+
+                <button class="card__delete button-delete" type="button">
+                  <span class="visually-hidden">Удалить товар из корзины.</span>
+                </button>
+              </div>
+            </li>
           </ul>
         </fieldset>
 
@@ -300,20 +300,21 @@
             </label>
             <div class="contacts__label contacts__label--address">
               <label>
-                <input class="contacts__input" type="text" name="address" placeholder="Адрес доставки" id="address" required>
+                <input class="contacts__input contacts__input--address" type="text" name="address" placeholder="Адрес доставки" id="address" required>
                 <span class="contacts__placeholder">Адрес доставки</span>
               </label>
-              <button class="contacts__button" type="button" id="contacts-button">
+              <button class="contacts__button" type="button" id="contacts-button" aria-label="Поиск по карте">
                 <svg width="20" height="20" stroke="#6e6e6e">
                   <use href="./img/sprite.svg#search"></use>
                 </svg>
+                <span class="contacts__button-text">Найти на карте</span>
               </button>
             </div>
           </div>
         </fieldset>
 
         <fieldset class="order__map map">
-          <div class="map__wrapper" id="map" style="background-color: rgb(219, 215, 211);">
+          <div class="map__wrapper" id="map">
             <script src="https://api-maps.yandex.ru/2.1/?apikey=bb32e304-92c1-4f44-8826-c90e304b0dc3&lang=ru_RU">
             </script>
           </div>
@@ -501,7 +502,7 @@
       </div>
 
       <button class="footer__arrow arrow-up">
-        <img src="./img/icons/arrow-up.svg" width="12" alt="22" alt="Стрелка вверх.">
+        <img src="./img/icons/arrow-up.svg" width="12" height="22" alt="Стрелка вверх.">
         <span class="visually-hidden">Подняться в начало страницы.</span>
       </button>
     </div>
@@ -534,7 +535,7 @@
   </template>
 
   <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
-  <script src="./js/plugins/inputmask.js"></script>
+  <script src="./js/plugins/inputmask.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.12.0/dist/js/jquery.suggestions.min.js"></script>
 
@@ -542,3 +543,5 @@
 </body>
 
 </html>
+
+

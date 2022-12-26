@@ -96,6 +96,8 @@
 
 
 .order__contacts {
+  position: relative;
+  z-index: 1;
   grid-area: contacts;
 
   @media (max-width: $tel) {

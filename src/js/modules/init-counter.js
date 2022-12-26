@@ -1,9 +1,4 @@
-const formatNumber = (number) => {
-  const arrSymbols = String(number).split('');
-  arrSymbols.splice(-3, 0, '\u00A0');
-  const numberSpace = arrSymbols.join('');
-  return numberSpace;
-}
+import {formatNumber} from "./util";
 
 const getItemPrice = (input) => input.value * input.dataset.price;
 
@@ -12,7 +7,10 @@ const initCounter = () => {
 
   if (counterWrappers) {
     let totalCost = 0;
+    let totalCount = 0;
     let totalPrice = document.querySelector('#total-price-items');
+    let productsPrice = document.querySelector('#products-price');
+    let productsCounts = document.querySelector('#products-count');
 
     counterWrappers.forEach(counter => {
       if (counter) {
@@ -31,7 +29,8 @@ const initCounter = () => {
           input.value++
           totalPriceItem.textContent = formatNumber(input.value * input.dataset.price);
           totalPrice.textContent = Number(totalPrice.textContent) + Number(input.dataset.price);
-          console.log(totalCost)
+          productsPrice.textContent = Number(totalPrice.textContent) + Number(input.dataset.price);
+          productsCounts.textContent = Number(productsCounts.textContent) + Number(input.value);
 
           if (input.dataset.oldPrice) {
             totalPriceItemOld.textContent = formatNumber(input.value * input.dataset.oldPrice);
@@ -45,7 +44,8 @@ const initCounter = () => {
           input.value--;
           totalPriceItem.textContent = formatNumber(input.value * input.dataset.price);
           totalPrice.textContent = Number(totalPrice.textContent) - Number(input.dataset.price);
-          console.log(totalCost)
+          productsPrice.textContent = Number(totalPrice.textContent) - Number(input.dataset.price);
+          productsCounts.textContent = Number(productsCounts.textContent) - Number(input.value);
 
           if (input.dataset.oldPrice) {
             totalPriceItemOld.textContent = formatNumber(input.value * input.dataset.oldPrice);
@@ -58,10 +58,13 @@ const initCounter = () => {
         })
 
         totalCost += getItemPrice(input);
+        totalCount += Number(input.value);
       }
     })
 
     totalPrice.textContent = totalCost;
+    productsPrice.textContent = totalCost;
+    productsCounts.textContent = totalCount;
 
   }
 }
