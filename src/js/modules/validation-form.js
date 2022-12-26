@@ -1,4 +1,6 @@
-const validationForm = () => {
+import {sendsSuccess} from "./send-form.js";
+
+const validationForm = (e) => {
   let validation = new window.JustValidate('#form-submit');
 
   let tel = document.querySelector('#phone');
@@ -56,7 +58,9 @@ const validationForm = () => {
         errorMessage: 'Поле обязательно к заполнению'
       }
     ])
-
+    .onSuccess(() => {
+      sendsSuccess(e)
+    })
 }
 
 export {validationForm};

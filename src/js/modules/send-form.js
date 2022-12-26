@@ -2,26 +2,29 @@ import {sendData} from "./api.js";
 import {blockSubmitButton, formSubmit, showError, showSuccess, unblockSubmitButton} from "./util.js";
 import {validationForm} from "./validation-form.js";
 
-const sendsForm = () => {
+const sendsSuccess = (e) => {
+  const formData = new FormData(e);
+  blockSubmitButton();
+
+  sendData(formData, () => {
+    showSuccess();
+    e.reset();
+    unblockSubmitButton();
+  }, () => {
+    showError();
+    unblockSubmitButton();
+  })
+
+}
+
+const sendForm = () => {
   formSubmit.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    let isValidate;
-
-    if (isValidate) {
-      const formData = new FormData(e.target);
-      blockSubmitButton();
-
-      sendData(formData, () => {
-        showSuccess();
-        e.target.reset();
-        unblockSubmitButton();
-      }, () => {
-        showError();
-        unblockSubmitButton();
-      })
-    }
+    validationForm(e.target)
   })
 }
 
-export {sendsForm};
+
+export {
+  sendsSuccess,
+  sendForm
+};
