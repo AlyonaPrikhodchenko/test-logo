@@ -1,1 +1,1 @@
-const initAddressHints=()=>{$("#address").suggestions({token:"e2eeb413a16819871f748c5de52aaaeee3059d46",type:"ADDRESS",onSelect:function(e){console.log(e.data.geo_lat),console.log(e.data.geo_lon)}})};export{initAddressHints};
+const initAddressHints=()=>{$("#address").suggestions({token:"e2eeb413a16819871f748c5de52aaaeee3059d46",type:"ADDRESS"})};export{initAddressHints};

@@ -1,1 +1,1 @@
-import{sendData}from"./api.js";import{blockSubmitButton,formSubmit,showError,showSuccess,unblockSubmitButton}from"./util.js";import{validationForm}from"./validation-form.js";const sendsForm=()=>{formSubmit.addEventListener("submit",(o=>{o.preventDefault()}))};export{sendsForm};
+import{formSubmit}from"./util.js";import{validationForm}from"./validation-form.js";const sendForm=()=>{formSubmit.addEventListener("submit",(t=>{t.preventDefault(),validationForm(t.target)}))};export{sendForm};
