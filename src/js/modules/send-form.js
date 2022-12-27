@@ -4,7 +4,13 @@ import {validationForm} from "./validation-form.js";
 const sendForm = () => {
   formSubmit.addEventListener('submit', (e) => {
     e.preventDefault();
-    validationForm(e.target);
+    const formData = new FormData(e.target);
+
+    validationForm(formData);
+
+    for (const pair of formData.entries()) {
+      console.log(`${pair[0]}, ${pair[1]}`);
+    }
   })
 }
 
