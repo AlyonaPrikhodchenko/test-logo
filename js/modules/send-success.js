@@ -1,1 +1,1 @@
-import{sendData}from"./api.js";import{blockSubmitButton,showError,showSuccess,unblockSubmitButton}from"./util.js";const sendsSuccess=o=>{const t=new FormData(o);blockSubmitButton(),sendData(t,(()=>{showSuccess(),unblockSubmitButton()}),(()=>{showError(),unblockSubmitButton()}))};export{sendsSuccess};
+import{sendData}from"./api.js";import{blockSubmitButton,showError,showSuccess,unblockSubmitButton}from"./util.js";const sendsSuccess=o=>{blockSubmitButton(),sendData(o,(()=>{showSuccess(),unblockSubmitButton()}),(()=>{showError(),unblockSubmitButton()}))};export{sendsSuccess};
