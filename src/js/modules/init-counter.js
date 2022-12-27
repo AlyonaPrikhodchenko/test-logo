@@ -67,7 +67,6 @@ const initCounter = () => {
     totalPrice.textContent = totalCost;
     productsPrice.textContent = totalCost;
     productsCounts.textContent = totalCount;
-
   }
 }
 
