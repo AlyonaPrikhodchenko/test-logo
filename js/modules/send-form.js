@@ -1,1 +1,0 @@
-import{formSubmit}from"./util.js";import{validationForm}from"./validation-form.js";const sendForm=()=>{formSubmit.addEventListener("submit",(o=>{o.preventDefault();const t=new FormData(o.target);validationForm(t);for(const o of t.entries())console.log(`${o[0]}, ${o[1]}`)}))};export{sendForm};
