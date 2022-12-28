@@ -10,6 +10,8 @@ const initCounter = () => {
     let totalCount = 0;
 
     let totalPrice = document.querySelector('#total-price-items');
+    let totalPriceAll = document.querySelector('#total-price');
+    let priceDelivery = document.querySelector('#price-delivery');
 
     let productsPrice = document.querySelector('#products-price');
     let productsCounts = document.querySelector('#products-count');
@@ -34,6 +36,8 @@ const initCounter = () => {
           productsPrice.textContent = Number(productsPrice.textContent) + Number(input.dataset.price);
           productsCounts.textContent = Number(productsCounts.textContent) + 1;
 
+          totalPriceAll.textContent = Number(totalPrice.textContent) + Number(priceDelivery.textContent);
+
           if (input.dataset.oldPrice) {
             totalPriceItemOld.textContent = formatNumber(input.value * input.dataset.oldPrice);
           }
@@ -48,6 +52,8 @@ const initCounter = () => {
           totalPrice.textContent = Number(totalPrice.textContent) - Number(input.dataset.price);
           productsPrice.textContent = Number(productsPrice.textContent) - Number(input.dataset.price);
           productsCounts.textContent = Number(productsCounts.textContent) - 1;
+          totalPriceAll.textContent = totalPrice.textContent;
+          totalPriceAll.textContent = Number(totalPrice.textContent) + Number(priceDelivery.textContent);
 
           if (input.dataset.oldPrice) {
             totalPriceItemOld.textContent = formatNumber(input.value * input.dataset.oldPrice);
