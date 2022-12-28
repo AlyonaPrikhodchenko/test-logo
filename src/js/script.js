@@ -14,6 +14,7 @@ opensBurgerMenu(mediaQueries);
 window.addEventListener('DOMContentLoaded', () => {
   initCounter();
   restoresCard();
+
   initAddressHints();
   ymaps.ready(initMap);
   transfersPlaceholder();
