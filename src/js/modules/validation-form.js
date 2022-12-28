@@ -1,7 +1,8 @@
 import {sendsSuccess} from "./send-success.js";
+import {formSubmit} from "./util.js";
+let validation = new window.JustValidate('#form-submit');
 
-const validationForm = (form) => {
-  let validation = new window.JustValidate('#form-submit');
+const validationForm = () => {
 
   let tel = document.querySelector('#phone');
   let telMask = new Inputmask('+7(999)999-99-99');
@@ -59,8 +60,13 @@ const validationForm = (form) => {
       }
     ])
     .onSuccess(() => {
-      sendsSuccess(form)
+      const formData = new FormData(formSubmit);
+      sendsSuccess(formData);
+
+      for (const pair of formData.entries()) {
+        console.log(`${pair[0]}, ${pair[1]}`);
+      }
     })
 }
 
-export {validationForm};
+export {validationForm, validation};

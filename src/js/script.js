@@ -7,7 +7,6 @@ import {scrollsUp} from "./modules/scroll-up.js";
 import {transfersPlaceholder} from "./modules/transfer-placeholder.js";
 import {initMap} from "./modules/yandex-map.js";
 import {validationForm} from "./modules/validation-form.js"
-import {sendForm} from "./modules/send-form.js";
 
 mediaQueries.addEventListener('change', opensBurgerMenu);
 opensBurgerMenu(mediaQueries);
@@ -21,7 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   countsLengthComment();
   validationForm();
-  sendForm();
 
   scrollsUp();
 })
