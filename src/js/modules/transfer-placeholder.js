@@ -1,8 +1,6 @@
-const transfersPlaceholder = () => {
-  const contactsInputs = document.querySelectorAll('.contacts__input');
-  const contactsPlaceholders = document.querySelectorAll('.contacts__placeholder');
-  const text = document.querySelector('.contacts__button-text');
+import {contactsInputs, contactsPlaceholders, text} from "./util.js";
 
+const transfersPlaceholder = () => {
   if (contactsInputs) {
 
     for (let i = 0; i < contactsInputs.length; i++) {

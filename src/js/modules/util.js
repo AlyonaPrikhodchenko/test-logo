@@ -1,4 +1,9 @@
 const SHOW_TIME = 4000;
+
+const contactsInputs = document.querySelectorAll('.contacts__input');
+const contactsPlaceholders = document.querySelectorAll('.contacts__placeholder');
+const text = document.querySelector('.contacts__button-text');
+
 const successContainer = document.querySelector('#success').content.querySelector('.success');
 const errorContainer = document.querySelector('#error').content.querySelector('.error');
 const errorButton = errorContainer.querySelector('.error__button');
@@ -80,5 +85,8 @@ export {
   blockSubmitButton,
   unblockSubmitButton,
   formSubmit,
-  formatNumber
+  formatNumber,
+  contactsInputs,
+  contactsPlaceholders,
+  text
 };
