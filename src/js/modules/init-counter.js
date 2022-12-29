@@ -1,6 +1,6 @@
 import {formatNumber} from "./util.js";
 
-const getItemPrice = (input) => input.value * input.dataset.price;
+const getItemPrice = (input) => input.value * input.dataset.oldPrice;
 
 const initCounter = () => {
   const counterWrappers = document.querySelectorAll('[data-counters');
@@ -8,7 +8,7 @@ const initCounter = () => {
   if (counterWrappers) {
     let totalCost = 0;
     let stocks = 0;
-    let discounts = 0;
+    let totalCount = 0;
 
     let totalPrice = document.querySelector('#total-price-items');
     let totalPriceAll = document.querySelector('#total-price');
@@ -36,11 +36,6 @@ const initCounter = () => {
 
         totalPriceItem.textContent = formatNumber(input.dataset.totalPrice);
 
-        if (input.dataset.totalPriceOld && totalPriceItemOld) {
-          input.dataset.totalPriceOld = input.value * input.dataset.oldPrice;
-          totalPriceItemOld.textContent = formatNumber(input.dataset.totalPriceOld);
-        }
-
         plus.addEventListener('click', () => {
           input.value++
           input.dataset.totalPrice = input.value * input.dataset.price;
@@ -54,13 +49,21 @@ const initCounter = () => {
           }
 
           totalPriceItem.textContent = formatNumber(input.dataset.totalPrice);
-          totalPrice.dataset.total = Number(totalPrice.dataset.total) + Number(input.dataset.price);
+
+          totalPrice.dataset.total = Number(totalPrice.dataset.total) + Number(input.dataset.oldPrice);
           totalPrice.textContent = formatNumber(totalPrice.dataset.total);
+
           totalPriceAll.dataset.priceTotalAll = Number(totalPrice.dataset.total) + Number(priceDelivery.dataset.priceDelivery) - Number(priceDiscounts.dataset.priceDiscounts);
           totalPriceAll.textContent = formatNumber(totalPriceAll.dataset.priceTotalAll);
 
           priceDiscounts.dataset.priceDiscounts = Number(priceStocks.dataset.priceStocks) + Number(pricePromo.dataset.pricePromo);
           priceDiscounts.textContent = formatNumber(priceDiscounts.dataset.priceDiscounts);
+
+          productsCounts.dataset.count = Number(productsCounts.dataset.count) + 1;
+          productsCounts.textContent = productsCounts.dataset.count;
+
+          productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) + Number(input.dataset.oldPrice);
+          productsPrice.textContent = formatNumber(productsPrice.dataset.productsPrice);
 
           if (input.value > 1) {
             minus.disabled = false;
@@ -80,7 +83,8 @@ const initCounter = () => {
           }
 
           totalPriceItem.textContent = formatNumber(input.dataset.totalPrice);
-          totalPrice.dataset.total = Number(totalPrice.dataset.total) - Number(input.dataset.price);
+
+          totalPrice.dataset.total = Number(totalPrice.dataset.total) - Number(input.dataset.oldPrice);
           totalPrice.textContent = formatNumber(totalPrice.dataset.total);
 
           totalPriceAll.dataset.priceTotalAll = Number(totalPrice.dataset.total) + Number(priceDelivery.dataset.priceDelivery) - Number(priceDiscounts.dataset.priceDiscounts);
@@ -89,21 +93,26 @@ const initCounter = () => {
           priceDiscounts.dataset.priceDiscounts = Number(priceStocks.dataset.priceStocks) + Number(pricePromo.dataset.pricePromo);
           priceDiscounts.textContent = formatNumber(priceDiscounts.dataset.priceDiscounts);
 
+          productsCounts.dataset.count = Number(productsCounts.dataset.count) - 1;
+          productsCounts.textContent = productsCounts.dataset.count;
+
+          productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) - Number(input.dataset.oldPrice);
+          productsPrice.textContent = formatNumber(productsPrice.dataset.productsPrice);
+
           if (input.value <= 1) {
             input.value = 1;
             minus.disabled = true;
           }
         })
 
-        if (input.dataset.totalPriceOld) {
-          stocks = Number(input.dataset.totalPriceOld) - Number(input.dataset.totalPrice);
-        }
-
         totalPriceItem.textContent = formatNumber(input.dataset.totalPrice);
         totalCost += getItemPrice(input);
+        totalCount += Number(input.value);
+        stocks += Number(input.dataset.totalPriceOld) - Number(input.dataset.totalPrice);
       }
     })
 
+    console.log(stocks)
     totalPrice.dataset.total = totalCost;
     totalPrice.textContent = formatNumber(totalPrice.dataset.total);
 
@@ -115,6 +124,13 @@ const initCounter = () => {
 
     priceDiscounts.dataset.priceDiscounts = Number(priceStocks.dataset.priceStocks) + Number(pricePromo.dataset.pricePromo);
     priceDiscounts.textContent = formatNumber(priceDiscounts.dataset.priceDiscounts);
+
+    productsCounts.dataset.count = totalCount;
+    productsCounts.textContent = totalCount;
+
+    productsPrice.dataset.productsPrice = totalCost;
+    productsPrice.textContent = formatNumber(productsPrice.dataset.productsPrice);
+
   }
 }
 
