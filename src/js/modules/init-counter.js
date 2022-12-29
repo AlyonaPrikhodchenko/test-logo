@@ -39,9 +39,9 @@ const initCounter = () => {
         plus.addEventListener('click', () => {
           input.value++
           input.dataset.totalPrice = input.value * input.dataset.price;
+          input.dataset.totalPriceOld = input.value * input.dataset.oldPrice;
 
-          if (input.dataset.totalPriceOld && totalPriceItemOld) {
-            input.dataset.totalPriceOld = input.value * input.dataset.oldPrice;
+          if (totalPriceItemOld) {
             totalPriceItemOld.textContent = formatNumber(input.dataset.totalPriceOld);
 
             priceStocks.dataset.priceStocks = Number(input.dataset.totalPriceOld) - Number(input.dataset.totalPrice);
@@ -73,9 +73,9 @@ const initCounter = () => {
         minus.addEventListener('click', () => {
           input.value--;
           input.dataset.totalPrice = input.value * input.dataset.price;
+          input.dataset.totalPriceOld = input.value * input.dataset.oldPrice;
 
-          if (input.dataset.totalPriceOld && totalPriceItemOld) {
-            input.dataset.totalPriceOld = input.value * input.dataset.oldPrice;
+          if (totalPriceItemOld) {
             totalPriceItemOld.textContent = formatNumber(input.dataset.totalPriceOld);
 
             priceStocks.dataset.priceStocks = Number(input.dataset.totalPriceOld) - Number(input.dataset.totalPrice);
@@ -112,7 +112,6 @@ const initCounter = () => {
       }
     })
 
-    console.log(stocks)
     totalPrice.dataset.total = totalCost;
     totalPrice.textContent = formatNumber(totalPrice.dataset.total);
 
