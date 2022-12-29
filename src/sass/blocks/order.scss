@@ -13,7 +13,7 @@
 
   @media (max-width: $tel) {
     grid-template-areas: none;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     gap: 0;
   }
 }
