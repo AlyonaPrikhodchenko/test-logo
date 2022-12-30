@@ -1,17 +1,19 @@
 import {getData} from "./api.js";
 
+let myMap;
+
+const coordsDefault = {
+  lat: '60.03311250396163',
+  lng: '30.42866049999992',
+};
+
 const initMap = () => {
   const isEnterKey = (evt) => evt.key === 'Enter';
   const input = document.querySelector('#address');
   const addressButton = document.querySelector('#contacts-button');
 
-  const coordsDefault = {
-    lat: '60.03311250396163',
-    lng: '30.42866049999992',
-  };
-
   // Создание карты
-  let myMap = new ymaps.Map('map', {
+  myMap = new ymaps.Map('map', {
     center: [coordsDefault.lat, coordsDefault.lng],
     zoom: 7
   });
@@ -45,7 +47,7 @@ const initMap = () => {
     const addressItem = addressItems.response.GeoObjectCollection.featureMember;
     const coords = poolsCoords(addressItem);
     myMap.setCenter(coords);
-    myMap.setZoom(5);
+    myMap.setZoom(7);
     generatesPin(coords);
   }
 
@@ -63,4 +65,4 @@ const initMap = () => {
   })
 }
 
-export {initMap};
+export {initMap, myMap, coordsDefault};

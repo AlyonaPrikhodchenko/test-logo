@@ -1,4 +1,5 @@
 import {contactsInputs, contactsPlaceholders, formSubmit, text} from "./util.js";
+import {coordsDefault, myMap} from "./yandex-map.js";
 
 const resetForm = () => {
   if (contactsInputs) {
@@ -15,6 +16,9 @@ const resetForm = () => {
     }
 
   }
+
+  myMap.geoObjects.removeAll();
+  myMap.setCenter([coordsDefault.lat, coordsDefault.lng])
   formSubmit.reset();
 }
 
