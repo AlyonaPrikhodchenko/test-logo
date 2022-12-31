@@ -4,6 +4,7 @@ const getItemPrice = (input) => input.value * input.dataset.oldPrice;
 
 const initCounter = () => {
   const counterWrappers = document.querySelectorAll('[data-counters');
+  // const productsTitle = document.querySelector('.products__legend');
 
   if (counterWrappers) {
     let totalCost = 0;
@@ -31,12 +32,6 @@ const initCounter = () => {
       const countsAmountsCard = () => {
         input.dataset.totalPrice = input.value * input.dataset.price;
         input.dataset.totalPriceOld = input.value * input.dataset.oldPrice;
-      }
-
-      // Считаем скидку по акциям и выводим на экран в строку 'Акции'
-      const countsStocks = () => {
-        priceStocks.dataset.priceStocks = Number(input.dataset.totalPriceOld) - Number(input.dataset.totalPrice);
-        priceStocks.textContent = formatNumber(priceStocks.dataset.priceStocks);
       }
 
       // Считаем сумму итоговую и выводим на экран в строку 'Итого'
@@ -75,9 +70,12 @@ const initCounter = () => {
           input.value++
           countsAmountsCard();
 
+          // Считаем скидку по акциям и выводим на экран в строку 'Акции'
+          priceStocks.dataset.priceStocks = Number(priceStocks.dataset.priceStocks) + Number(input.dataset.oldPrice) - Number(input.dataset.price);
+          priceStocks.textContent = formatNumber(priceStocks.dataset.priceStocks);
+
           if (totalPriceItemOld) {
             displaysOldPriceText()
-            countsStocks();
           }
 
           displaysPriceText()
@@ -105,9 +103,12 @@ const initCounter = () => {
           input.value--;
           countsAmountsCard();
 
+          // Считаем скидку по акциям и выводим на экран в строку 'Акции'
+          priceStocks.dataset.priceStocks = Number(priceStocks.dataset.priceStocks) - (Number(input.dataset.oldPrice) - Number(input.dataset.price));
+          priceStocks.textContent = formatNumber(priceStocks.dataset.priceStocks);
+
           if (totalPriceItemOld) {
             displaysOldPriceText()
-            countsStocks()
           }
 
           displaysPriceText()
@@ -145,7 +146,7 @@ const initCounter = () => {
     totalPriceAll.textContent = formatNumber(totalPriceAll.dataset.priceTotalAll);
 
     priceStocks.dataset.priceStocks = stocks;
-    priceStocks.textContent = formatNumber(priceStocks.dataset.priceStocks);
+    priceStocks.textContent = stocks;
 
     priceDiscounts.dataset.priceDiscounts = Number(priceStocks.dataset.priceStocks) + Number(pricePromo.dataset.pricePromo);
     priceDiscounts.textContent = formatNumber(priceDiscounts.dataset.priceDiscounts);
