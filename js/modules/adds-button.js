@@ -1,0 +1,1 @@
+import{promoButtonText,promoInput}from"./util.js";const addsButtonPromo=()=>{promoInput&&promoInput.addEventListener("input",(()=>{promoInput.value.length>0?promoButtonText.classList.add("submit__promo-button-text--js"):promoButtonText.classList.remove("submit__promo-button-text--js")}))};export{addsButtonPromo};
