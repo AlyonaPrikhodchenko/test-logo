@@ -1,4 +1,5 @@
 import {getData} from "./api.js";
+import {mediaQueries} from "./open-burger.js";
 
 let myMap;
 
@@ -17,6 +18,30 @@ const initMap = () => {
     center: [coordsDefault.lat, coordsDefault.lng],
     zoom: 7
   });
+
+  const wrapper = document.querySelector('.map__wrapper');
+  const ymapElements = wrapper.querySelectorAll('.ymaps-2-1-79-map');
+
+  // Устраняет баг с картой при ресайзе
+  const sizeEl = (media) => {
+    window.addEventListener('resize', () => {
+      if (media.matches) {
+        let widthMargins = document.body.clientWidth / 9;
+        let widthMap = document.body.clientWidth - widthMargins;
+        console.log(widthMap)
+        for (let el of ymapElements) {
+          el.style.width = `${widthMap}px`
+        }
+      } else {
+        for (let el of ymapElements) {
+          el.style.width = `${wrapper.clientWidth}px`
+        }
+      }
+    })
+  }
+
+  sizeEl(mediaQueries);
+  mediaQueries.addEventListener('change', sizeEl);
 
   // Вытягивает координаты широты и долготы адреса из поля ввода
   const poolsCoords = (addressArr) => {
