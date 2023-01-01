@@ -6,6 +6,7 @@ const restoresCard = () => {
   let productsPrice = document.querySelector('#products-price');
   let productsCounts = document.querySelector('#products-count');
   const productsList = document.querySelector('.products__list');
+  const productsTitle = document.querySelector('.products__legend');
   const cards = Array.from(productsList.children);
 
   if (cards) {
@@ -32,6 +33,14 @@ const restoresCard = () => {
           card.removeChild(cardContent);
           productsCounts.dataset.count = Number(productsCounts.dataset.count) - Number(input.value);
           productsCounts.textContent = productsCounts.dataset.count;
+
+          if (productsCounts.dataset.count === '0') {
+            priceDelivery.dataset.priceDelivery = '0';
+            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
+          } else {
+            priceDelivery.dataset.priceDelivery = '200';
+            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
+          }
 
           productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) - Number(input.dataset.totalPriceOld);
           productsPrice.textContent = formatNumber(productsPrice.dataset.productsPrice);
@@ -66,6 +75,14 @@ const restoresCard = () => {
           productsCounts.dataset.count = Number(productsCounts.dataset.count) + Number(input.value);
           productsCounts.textContent = productsCounts.dataset.count;
 
+          if (productsCounts.dataset.count === '0') {
+            priceDelivery.dataset.priceDelivery = '0';
+            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
+          } else {
+            priceDelivery.dataset.priceDelivery = '200';
+            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
+          }
+
           productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) + Number(input.dataset.totalPriceOld);
           productsPrice.textContent = formatNumber(productsPrice.dataset.productsPrice);
 
@@ -89,10 +106,8 @@ const restoresCard = () => {
           card.remove();
         })
       }
-
     })
   }
-
 
 }
 

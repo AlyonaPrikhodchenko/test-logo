@@ -66,3 +66,11 @@
   font-size: 12px;
   color: $color-red;
 }
+
+.just-validate-error-field {
+  border-color: $color-red;
+}
+
+.just-validate-error-field + .contacts__placeholder {
+  color: $color-red;
+}

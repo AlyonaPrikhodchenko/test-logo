@@ -4,7 +4,6 @@ const getItemPrice = (input) => input.value * input.dataset.oldPrice;
 
 const initCounter = () => {
   const counterWrappers = document.querySelectorAll('[data-counters');
-  // const productsTitle = document.querySelector('.products__legend');
 
   if (counterWrappers) {
     let totalCost = 0;
