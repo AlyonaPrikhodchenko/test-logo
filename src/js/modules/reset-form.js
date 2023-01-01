@@ -1,7 +1,11 @@
-import {contactsInputs, contactsPlaceholders, formSubmit, text} from "./util.js";
+import {contactsInputs, contactsPlaceholders, formSubmit, promoButtonText, promoInput, text} from "./util.js";
 import {coordsDefault, myMap} from "./yandex-map.js";
 
 const resetForm = () => {
+  if (promoInput) {
+    promoButtonText.classList.remove('submit__promo-button-text--js');
+  }
+
   if (contactsInputs) {
 
     for (let i = 0; i < contactsInputs.length; i++) {

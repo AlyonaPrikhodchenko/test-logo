@@ -15,6 +15,7 @@ const transfersPlaceholder = () => {
           }
         } else {
           placeholder.classList.remove('contacts__placeholder--hidden');
+
           if (input.classList.contains('contacts__input--address')) {
             text.classList.remove('contacts__button-text--js');
           }

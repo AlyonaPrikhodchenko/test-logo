@@ -21,7 +21,7 @@
   position: relative;
   font-size: 50px;
   font-weight: 700;
-  color: $color-white;
+  color: $color-green;
 }
 
 .error__message {
@@ -65,6 +65,14 @@
   left: 20px;
   font-size: 12px;
   color: $color-red;
+}
+
+.just-validate-success-label {
+  position: absolute;
+  bottom: -14px;
+  left: 20px;
+  font-size: 12px;
+  color: $color-green;
 }
 
 .just-validate-error-field {

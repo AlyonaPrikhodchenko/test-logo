@@ -51,12 +51,19 @@ const validationForm = () => {
       {
         rule: 'email',
         errorMessage: 'Введите валидный адрес почты'
-      }
+      },
     ])
     .addField('#address', [
       {
         rule: 'required',
         errorMessage: 'Поле обязательно к заполнению'
+      }
+    ])
+    .addField('#promo', [
+      {
+        rule: 'maxLength',
+        value: 7,
+        errorMessage: 'Максимум 7 символов'
       }
     ])
     .onSuccess(() => {
