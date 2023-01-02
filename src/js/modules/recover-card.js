@@ -34,6 +34,24 @@ const restoresCard = () => {
         deleteButton.addEventListener('click', () => {
           card.removeChild(cardContent);
 
+          productsCounts.dataset.count = Number(productsCounts.dataset.count) - Number(input.value);
+          productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) - Number(input.dataset.totalPriceOld);
+          changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice);
+
+          if (productsCounts.dataset.count === '0') {
+            priceDelivery.dataset.priceDelivery = '0';
+            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
+
+            pricePromo.dataset.pricePromo = '0';
+            pricePromo.textContent = formatNumber(pricePromo.dataset.pricePromo);
+          } else {
+            priceDelivery.dataset.priceDelivery = '200';
+            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
+
+            pricePromo.dataset.pricePromo = '500';
+            pricePromo.textContent = formatNumber(pricePromo.dataset.pricePromo);
+          }
+
           totalPrice.dataset.total = Number(totalPrice.dataset.total) - Number(input.dataset.totalPriceOld);
           totalPrice.textContent = formatNumber(totalPrice.dataset.total);
 
@@ -45,18 +63,6 @@ const restoresCard = () => {
 
           totalPriceAll.dataset.priceTotalAll = Number(totalPrice.dataset.total) + Number(priceDelivery.dataset.priceDelivery) - Number(priceDiscounts.dataset.priceDiscounts);
           totalPriceAll.textContent = formatNumber(totalPriceAll.dataset.priceTotalAll);
-
-          productsCounts.dataset.count = Number(productsCounts.dataset.count) - Number(input.value);
-          productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) - Number(input.dataset.totalPriceOld);
-          changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice);
-
-          if (productsCounts.dataset.count === '0') {
-            priceDelivery.dataset.priceDelivery = '0';
-            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
-          } else {
-            priceDelivery.dataset.priceDelivery = '200';
-            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
-          }
 
           if (cardName) {
             cardName.textContent = cardTitle.textContent;
@@ -73,6 +79,24 @@ const restoresCard = () => {
           card.appendChild(cardContent);
           card.removeChild(recoverElement);
 
+          productsCounts.dataset.count = Number(productsCounts.dataset.count) + Number(input.value);
+          productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) + Number(input.dataset.totalPriceOld);
+          changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice)
+
+          if (productsCounts.dataset.count === '0') {
+            priceDelivery.dataset.priceDelivery = '0';
+            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
+
+            pricePromo.dataset.pricePromo = '0';
+            pricePromo.textContent = formatNumber(pricePromo.dataset.pricePromo);
+          } else {
+            priceDelivery.dataset.priceDelivery = '200';
+            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
+
+            pricePromo.dataset.pricePromo = '500';
+            pricePromo.textContent = formatNumber(pricePromo.dataset.pricePromo);
+          }
+
           priceStocks.dataset.priceStocks = Number(priceStocks.dataset.priceStocks) + (Number(input.dataset.totalPriceOld) - Number(input.dataset.totalPrice));
           priceStocks.textContent = formatNumber(priceStocks.dataset.priceStocks);
 
@@ -84,19 +108,6 @@ const restoresCard = () => {
 
           totalPriceAll.dataset.priceTotalAll = Number(totalPrice.dataset.total) + Number(priceDelivery.dataset.priceDelivery) - Number(priceDiscounts.dataset.priceDiscounts);
           totalPriceAll.textContent = formatNumber(totalPriceAll.dataset.priceTotalAll);
-
-          productsCounts.dataset.count = Number(productsCounts.dataset.count) + Number(input.value);
-          productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) + Number(input.dataset.totalPriceOld);
-          changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice)
-
-          if (productsCounts.dataset.count === '0') {
-            priceDelivery.dataset.priceDelivery = '0';
-            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
-          } else {
-            priceDelivery.dataset.priceDelivery = '200';
-            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
-          }
-
         })
       }
 
