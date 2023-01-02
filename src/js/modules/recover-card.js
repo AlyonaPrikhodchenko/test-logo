@@ -1,4 +1,4 @@
-import {formatNumber} from "./util.js";
+import {formatNumber} from './util.js';
 
 const recoverTemplate = document.querySelector('#recover').content.querySelector('.card__recover');
 
@@ -6,7 +6,6 @@ const restoresCard = () => {
   let productsPrice = document.querySelector('#products-price');
   let productsCounts = document.querySelector('#products-count');
   const productsList = document.querySelector('.products__list');
-  const productsTitle = document.querySelector('.products__legend');
   const cards = Array.from(productsList.children);
 
   if (cards) {
@@ -111,4 +110,4 @@ const restoresCard = () => {
 
 }
 
-export {restoresCard}
+export {restoresCard};

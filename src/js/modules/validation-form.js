@@ -1,6 +1,7 @@
-import {sendsSuccess} from "./send-success.js";
-import {formSubmit} from "./util.js";
-let validation = new window.JustValidate('#form-submit');
+import {sendsSuccess} from './send-success.js';
+import {formSubmit} from './util.js';
+
+const validation = new window.JustValidate('#form-submit');
 
 const validationForm = () => {
 
@@ -76,4 +77,7 @@ const validationForm = () => {
     })
 }
 
-export {validationForm, validation};
+export {
+  validationForm,
+  validation
+};

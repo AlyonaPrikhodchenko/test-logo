@@ -1,4 +1,4 @@
-import {formatNumber} from "./util.js";
+import {formatNumber} from './util.js';
 
 const getItemPrice = (input) => input.value * input.dataset.oldPrice;
 

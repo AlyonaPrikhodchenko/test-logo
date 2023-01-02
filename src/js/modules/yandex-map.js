@@ -1,5 +1,5 @@
-import {getData} from "./api.js";
-import {mediaQueries} from "./open-burger.js";
+import {getData} from './api.js';
+import {mediaQueries} from './open-burger.js';
 
 let myMap;
 
@@ -90,4 +90,8 @@ const initMap = () => {
   })
 }
 
-export {initMap, myMap, coordsDefault};
+export {
+  initMap,
+  myMap,
+  coordsDefault
+};

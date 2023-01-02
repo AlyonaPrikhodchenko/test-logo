@@ -1,4 +1,4 @@
-import {contactsInputs, contactsPlaceholders, text} from "./util.js";
+import {contactsInputs, contactsPlaceholders, text} from './util.js';
 
 const transfersPlaceholder = () => {
   if (contactsInputs) {

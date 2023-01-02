@@ -27,4 +27,7 @@ const opensBurgerMenu = (media) => {
   }
 }
 
-export {opensBurgerMenu, mediaQueries};
+export {
+  opensBurgerMenu,
+  mediaQueries
+};

@@ -1,4 +1,4 @@
-import {promoButtonText, promoInput} from "./util.js"
+import {promoButtonText, promoInput} from './util.js';
 
 const addsButtonPromo = () => {
   if (promoInput) {
@@ -12,4 +12,4 @@ const addsButtonPromo = () => {
   }
 }
 
-export {addsButtonPromo}
+export {addsButtonPromo};
