@@ -1,9 +1,9 @@
-import {formatNumber} from './util.js';
+import {changesTitle, formatNumber} from './util.js';
 
 const getItemPrice = (input) => input.value * input.dataset.oldPrice;
 
 const initCounter = () => {
-  const counterWrappers = document.querySelectorAll('[data-counters');
+  const counterWrappers = document.querySelectorAll('[data-counters]');
 
   if (counterWrappers) {
     let totalCost = 0;
@@ -86,13 +86,14 @@ const initCounter = () => {
           countsDiscounts();
           countsAllPrice();
 
-          // Считаем общее количество товаров при клике на + и выводим на экран в заголовок списка товаров
+          // Считаем общее количество товаров при клике на +
           productsCounts.dataset.count = Number(productsCounts.dataset.count) + 1;
-          productsCounts.textContent = productsCounts.dataset.count;
 
-          // Считаем общую сумму при клике на - и выводим на экран в заголовок списка товаров
+          // Считаем общую сумму при клике на +
           productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) + Number(input.dataset.oldPrice);
-          productsPrice.textContent = formatNumber(productsPrice.dataset.productsPrice);
+
+          // Выводим количество товаров и сумму в заголовок
+          changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice);
 
           disabledButton()
         })
@@ -119,13 +120,14 @@ const initCounter = () => {
           countsDiscounts()
           countsAllPrice();
 
-          // Считаем общее количество товаров при клике на - и выводим на экран в заголовок списка товаров
+          // Считаем общее количество товаров при клике на -
           productsCounts.dataset.count = Number(productsCounts.dataset.count) - 1;
-          productsCounts.textContent = productsCounts.dataset.count;
 
-          // Считаем общую сумму при клике на - и выводим на экран в заголовок списка товаров
+          // Считаем общую сумму при клике на -
           productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) - Number(input.dataset.oldPrice);
-          productsPrice.textContent = formatNumber(productsPrice.dataset.productsPrice);
+
+          // Выводим количество товаров и сумму в заголовок
+          changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice)
 
           disabledButton()
         })
@@ -149,13 +151,6 @@ const initCounter = () => {
 
     priceDiscounts.dataset.priceDiscounts = Number(priceStocks.dataset.priceStocks) + Number(pricePromo.dataset.pricePromo);
     priceDiscounts.textContent = formatNumber(priceDiscounts.dataset.priceDiscounts);
-
-    productsCounts.dataset.count = totalCount;
-    productsCounts.textContent = totalCount;
-
-    productsPrice.dataset.productsPrice = totalCost;
-    productsPrice.textContent = formatNumber(productsPrice.dataset.productsPrice);
-
   }
 }
 

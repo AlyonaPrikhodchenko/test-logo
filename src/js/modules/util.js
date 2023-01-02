@@ -14,6 +14,8 @@ const errorButton = errorContainer.querySelector('.error__button');
 const formSubmit = document.querySelector('#form-submit');
 const submitButton = formSubmit.querySelector('#submit-button');
 
+const productsTitle = document.querySelector('.products__legend');
+
 const blockSubmitButton = () => {
   submitButton.disabled = true;
   submitButton.textContent = 'Оформляю заказ...';
@@ -82,6 +84,18 @@ const formatNumber = (number) => {
   return numberSpace;
 }
 
+const changesTitle = (count, price) => {
+  if (count <= '0') {
+    productsTitle.innerHTML = `Ваша корзина пуста`;
+  } else if (count > '0' && count < '2') {
+    productsTitle.innerHTML = `<span class="products__count" id="products-count" data-count="${count}">${count}</span> товар на сумму <span class="products__price" id="products-price" data-products-price="${price}">${formatNumber(price)}</span>&nbsp;₽`;
+  } else if (count > '1' && count < '5') {
+    productsTitle.innerHTML = `<span class="products__count" id="products-count" data-count="${count}">${count}</span> товара на сумму <span class="products__price" id="products-price" data-products-price=${price}>${formatNumber(price)}</span>&nbsp;₽`;
+  } else if (count >= '5') {
+    productsTitle.innerHTML = `<span class="products__count" id="products-count" data-count="${count}">${count}</span> товаров на сумму <span class="products__price" id="products-price" data-products-price=${price}>${formatNumber(price)}</span>&nbsp;₽`;
+  }
+}
+
 export {
   showError,
   showSuccess,
@@ -93,5 +107,6 @@ export {
   contactsPlaceholders,
   text,
   promoInput,
-  promoButtonText
+  promoButtonText,
+  changesTitle
 };
