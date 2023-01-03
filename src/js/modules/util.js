@@ -15,19 +15,33 @@ const formSubmit = document.querySelector('#form-submit');
 const submitButton = formSubmit.querySelector('#submit-button');
 
 const productsTitle = document.querySelector('.products__legend');
+const productsCounts = document.querySelector('#products-count');
+const productsPrice = document.querySelector('#products-price');
+const productsList = document.querySelector('.products__list');
 
+const totalPrice = document.querySelector('#total-price-items');
+const priceStocks = document.querySelector('#price-stocks');
+const priceDiscounts = document.querySelector('#price-discounts');
+const pricePromo = document.querySelector('#price-promo');
+const totalPriceAll = document.querySelector('#total-price');
+const priceDelivery = document.querySelector('#price-delivery');
+
+// Блокирует кнопку во время отправки формы
 const blockSubmitButton = () => {
   submitButton.disabled = true;
   submitButton.textContent = 'Оформляю заказ...';
 };
 
+// Разблокирует кнопку
 const unblockSubmitButton = () => {
   submitButton.disabled = false;
   submitButton.textContent = 'Оформить заказ';
 };
 
+// Находит кнопку Esc
 const isEscapeKey = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 
+// Закрытвает попап при нажатии Esc
 const onPopupEscKeydown = (evt) => {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
@@ -35,10 +49,12 @@ const onPopupEscKeydown = (evt) => {
   }
 };
 
+// Удаляет попап
 const onPopupClick = () => {
   removePopup();
 };
 
+// Удаляет попап и обработчик событий
 function removePopup() {
   errorContainer.remove();
   successContainer.remove();
@@ -48,6 +64,7 @@ function removePopup() {
   document.removeEventListener('keydown', onPopupEscKeydown);
 }
 
+// Показывает сообщение при неудачной отправке формы, закрывает попап при клике мимо окна, на кнопку или на Esc
 const showError = () => {
   document.body.append(errorContainer);
   errorContainer.append(errorButton);
@@ -65,6 +82,7 @@ const showError = () => {
   }, SHOW_TIME);
 };
 
+// Показывает сообщение при удачной отправке формы, закрывает попап при клике мимо окна или на Esc
 const showSuccess = () => {
   document.body.append(successContainer);
 
@@ -77,6 +95,7 @@ const showSuccess = () => {
   }, SHOW_TIME);
 };
 
+// Форматирует суммы товаров что-бы был пробел
 const formatNumber = (number) => {
   const arrSymbols = String(number).split('');
   arrSymbols.splice(-3, 0, '\u00A0');
@@ -84,6 +103,7 @@ const formatNumber = (number) => {
   return numberSpace;
 }
 
+// Меняет текст в заголовке карточек при отсутствии товаров и их разном кол-ве(функцию еще нужно доработать на изменение слова 'товар')
 const changesTitle = (count, price) => {
   if (count <= '0') {
     productsTitle.innerHTML = `Ваша корзина пуста`;
@@ -95,6 +115,9 @@ const changesTitle = (count, price) => {
     productsTitle.innerHTML = `<span class="products__count" id="products-count" data-count="${count}">${count}</span> товаров на сумму <span class="products__price" id="products-price" data-products-price=${price}>${formatNumber(price)}</span>&nbsp;₽`;
   }
 }
+
+// Подсчитывает общую стоимость товара в карточке
+const getItemPrice = (input) => input.value * input.dataset.oldPrice;
 
 export {
   showError,
@@ -109,5 +132,15 @@ export {
   promoInput,
   promoButtonText,
   changesTitle,
-  submitButton
+  submitButton,
+  productsList,
+  productsCounts,
+  productsPrice,
+  totalPrice,
+  priceStocks,
+  priceDiscounts,
+  pricePromo,
+  totalPriceAll,
+  priceDelivery,
+  getItemPrice
 };

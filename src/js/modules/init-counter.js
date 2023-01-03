@@ -1,6 +1,16 @@
-import {changesTitle, formatNumber} from './util.js';
-
-const getItemPrice = (input) => input.value * input.dataset.oldPrice;
+import {
+  changesTitle,
+  formatNumber,
+  getItemPrice,
+  priceDelivery,
+  priceDiscounts,
+  pricePromo,
+  priceStocks,
+  productsCounts,
+  productsPrice,
+  totalPrice,
+  totalPriceAll,
+} from './util.js';
 
 const initCounter = () => {
   const counterWrappers = document.querySelectorAll('[data-counters]');
@@ -8,24 +18,13 @@ const initCounter = () => {
   if (counterWrappers) {
     let totalCost = 0;
     let stocks = 0;
-    let totalCount = 0;
-
-    let totalPrice = document.querySelector('#total-price-items');
-    let totalPriceAll = document.querySelector('#total-price');
-    let priceDelivery = document.querySelector('#price-delivery');
-    let priceStocks = document.querySelector('#price-stocks');
-    let priceDiscounts = document.querySelector('#price-discounts');
-    let pricePromo = document.querySelector('#price-promo');
-
-    let productsPrice = document.querySelector('#products-price');
-    let productsCounts = document.querySelector('#products-count');
 
     counterWrappers.forEach(counter => {
       const plus = counter.querySelector('.card__result-button--plus');
       const minus = counter.querySelector('.card__result-button--minus');
-      let totalPriceItem = counter.querySelector('[data-text-new]');
-      let totalPriceItemOld = counter.querySelector('[data-text-old]');
-      let input = counter.querySelector('.card__result-quantity-value');
+      const totalPriceItem = counter.querySelector('[data-text-new]');
+      const totalPriceItemOld = counter.querySelector('[data-text-old]');
+      const input = counter.querySelector('.card__result-quantity-value');
 
       // Считаем общие суммы в карточке
       const countsAmountsCard = () => {
@@ -135,7 +134,6 @@ const initCounter = () => {
 
         totalPriceItem.textContent = formatNumber(input.dataset.totalPrice);
         totalCost += getItemPrice(input);
-        totalCount += Number(input.value);
         stocks += Number(input.dataset.totalPriceOld) - Number(input.dataset.totalPrice);
       }
     })

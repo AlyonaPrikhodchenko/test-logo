@@ -1,34 +1,38 @@
-import {changesTitle, formatNumber, submitButton} from './util.js';
+import {
+  changesTitle,
+  formatNumber,
+  productsCounts,
+  productsList,
+  productsPrice,
+  submitButton,
+  totalPrice,
+  priceStocks,
+  priceDiscounts,
+  pricePromo,
+  totalPriceAll,
+  priceDelivery,
+  getItemPrice
+} from './util.js';
 
 const recoverTemplate = document.querySelector('#recover').content.querySelector('.card__recover');
-const getItemPrice = (input) => input.value * input.dataset.oldPrice;
 
 const restoresCard = () => {
-  const productsList = document.querySelector('.products__list');
   const cards = Array.from(productsList.children);
 
   if (cards) {
     let totalCost = 0;
     let totalCount = 0;
-    let productsCounts = document.querySelector('#products-count');
-    let productsPrice = document.querySelector('#products-price');
 
     cards.forEach(card => {
       const recoverElement = recoverTemplate.cloneNode(true);
-      let cardName = recoverElement.querySelector('#card-name');
+      const cardName = recoverElement.querySelector('#card-name');
+      const recoverButton = recoverElement.querySelector('.card__recover-button');
+      const deleteForeverButton = recoverElement.querySelector('.card__recover-delete');
 
-      let cardTitle = card.querySelector('.card__title');
-      let deleteButton = card.querySelector('.card__delete');
-      let cardContent = card.querySelector('.card__content');
-      let recoverButton = recoverElement.querySelector('.card__recover-button');
-      let deleteForeverButton = recoverElement.querySelector('.card__recover-delete');
-      let input = card.querySelector('.card__result-quantity-value');
-      let totalPrice = document.querySelector('#total-price-items');
-      let priceStocks = document.querySelector('#price-stocks');
-      let priceDiscounts = document.querySelector('#price-discounts');
-      let pricePromo = document.querySelector('#price-promo');
-      let totalPriceAll = document.querySelector('#total-price');
-      let priceDelivery = document.querySelector('#price-delivery');
+      const cardTitle = card.querySelector('.card__title');
+      const deleteButton = card.querySelector('.card__delete');
+      const cardContent = card.querySelector('.card__content');
+      const input = card.querySelector('.card__result-quantity-value');
 
       if (deleteButton) {
         deleteButton.addEventListener('click', () => {
