@@ -92,6 +92,7 @@ function sprite() {
 function copy(done) {
   gulp.src([
     'src/fonts/*.{woff2,woff}',
+    'src/*.ico',
     'src/manifest.webmanifest',
   ], {
     base: 'src'

@@ -1,4 +1,4 @@
-import {changesTitle, formatNumber} from './util.js';
+import {changesTitle, formatNumber, submitButton} from './util.js';
 
 const recoverTemplate = document.querySelector('#recover').content.querySelector('.card__recover');
 const getItemPrice = (input) => input.value * input.dataset.oldPrice;
@@ -39,12 +39,16 @@ const restoresCard = () => {
           changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice);
 
           if (productsCounts.dataset.count === '0') {
+            submitButton.disabled = true;
+
             priceDelivery.dataset.priceDelivery = '0';
             priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
 
             pricePromo.dataset.pricePromo = '0';
             pricePromo.textContent = formatNumber(pricePromo.dataset.pricePromo);
           } else {
+            submitButton.disabled = false;
+
             priceDelivery.dataset.priceDelivery = '200';
             priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
 
@@ -84,12 +88,16 @@ const restoresCard = () => {
           changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice)
 
           if (productsCounts.dataset.count === '0') {
+            submitButton.disabled = true;
+
             priceDelivery.dataset.priceDelivery = '0';
             priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
 
             pricePromo.dataset.pricePromo = '0';
             pricePromo.textContent = formatNumber(pricePromo.dataset.pricePromo);
           } else {
+            submitButton.disabled = false;
+
             priceDelivery.dataset.priceDelivery = '200';
             priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
 

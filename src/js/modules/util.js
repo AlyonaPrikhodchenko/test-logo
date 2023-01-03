@@ -87,7 +87,7 @@ const formatNumber = (number) => {
 const changesTitle = (count, price) => {
   if (count <= '0') {
     productsTitle.innerHTML = `Ваша корзина пуста`;
-  } else if (count > '0' && count < '2') {
+  } else if (count === '1') {
     productsTitle.innerHTML = `<span class="products__count" id="products-count" data-count="${count}">${count}</span> товар на сумму <span class="products__price" id="products-price" data-products-price="${price}">${formatNumber(price)}</span>&nbsp;₽`;
   } else if (count > '1' && count < '5') {
     productsTitle.innerHTML = `<span class="products__count" id="products-count" data-count="${count}">${count}</span> товара на сумму <span class="products__price" id="products-price" data-products-price=${price}>${formatNumber(price)}</span>&nbsp;₽`;
@@ -108,5 +108,6 @@ export {
   text,
   promoInput,
   promoButtonText,
-  changesTitle
+  changesTitle,
+  submitButton
 };
