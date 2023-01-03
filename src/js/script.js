@@ -12,10 +12,10 @@ import {addsButtonPromo} from "./modules/adds-button.js";
 mediaQueries.addEventListener('change', opensBurgerMenu);
 opensBurgerMenu(mediaQueries);
 
-window.addEventListener('DOMContentLoaded', () => {
-  initCounter();
-  restoresCard();
+initCounter();
+restoresCard();
 
+window.addEventListener('DOMContentLoaded', () => {
   initAddressHints();
   ymaps.ready(initMap);
   transfersPlaceholder();
