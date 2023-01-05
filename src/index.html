@@ -108,7 +108,11 @@
         </div>
 
         <fieldset class="order__products products">
-          <legend class="products__legend form-legend"><span class="products__count" id="products-count" data-count="3">3</span> товара на сумму <span class="products__price" id="products-price" data-products-price="25000">24&nbsp;500</span>&nbsp;₽</legend>
+          <h2 class="products__legend form-legend">
+            <div class="products__legend-text">
+              <span class="products__count" id="products-count" data-count="3">3</span> товара на сумму <span class="products__price" id="products-price" data-products-price="25000">24&nbsp;500</span>&nbsp;₽
+            </div>
+          </h2>
 
           <ul class="products__list reset-list">
             <li class="products__item card">
@@ -540,6 +544,13 @@
       <button type="button" class="error__button">Закрыть окно</button>
     </div>
   </template>
+
+    <!-- Сообщение о пустой корзине -->
+    <template id="basket-empty">
+      <div class="products__legend-empty">
+        Ваша корзина пуста
+      </div>
+    </template>
 
   <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
   <script src="./js/plugins/inputmask.min.js"></script>
