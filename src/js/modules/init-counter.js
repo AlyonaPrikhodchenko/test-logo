@@ -85,6 +85,7 @@ const initCounter = () => {
           countsDiscounts();
           countsAllPrice();
 
+          disabledButton()
           // Считаем общее количество товаров при клике на +
           productsCounts.dataset.count = Number(productsCounts.dataset.count) + 1;
 
@@ -93,8 +94,6 @@ const initCounter = () => {
 
           // Выводим количество товаров и сумму в заголовок
           changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice);
-
-          disabledButton()
         })
 
         // При нажатии на -
@@ -119,6 +118,7 @@ const initCounter = () => {
           countsDiscounts()
           countsAllPrice();
 
+          disabledButton()
           // Считаем общее количество товаров при клике на -
           productsCounts.dataset.count = Number(productsCounts.dataset.count) - 1;
 
@@ -128,7 +128,6 @@ const initCounter = () => {
           // Выводим количество товаров и сумму в заголовок
           changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice)
 
-          disabledButton()
         })
 
 

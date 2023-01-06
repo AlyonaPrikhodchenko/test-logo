@@ -15,8 +15,12 @@ const formSubmit = document.querySelector('#form-submit');
 const submitButton = formSubmit.querySelector('#submit-button');
 
 const productsTitle = document.querySelector('.products__legend');
-const productsCounts = document.querySelector('#products-count');
-const productsPrice = document.querySelector('#products-price');
+const productsTitleText = productsTitle.querySelector('.products__legend-text');
+
+const productsCounts = productsTitle.querySelector('#products-count');
+const productsPrice = productsTitle.querySelector('#products-price');
+const productsWord = productsTitle.querySelector('.products__word');
+
 const productsList = document.querySelector('.products__list');
 
 const totalPrice = document.querySelector('#total-price-items');
@@ -103,18 +107,37 @@ const formatNumber = (number) => {
   return numberSpace;
 }
 
-// Меняет текст в заголовке карточек при отсутствии товаров и их разном кол-ве
-// Функцию нужно еще исправить. Убрать innerHTML из кода и сравнивать числа, а не строки.
-const changesTitle = (count, price) => {
-  if (count <= '0') {
-    productsTitle.innerHTML = `Ваша корзина пуста`;
-  } else if (count === '1') {
-    productsTitle.innerHTML = `<span class="products__count" id="products-count" data-count="${count}">${count}</span> товар на сумму <span class="products__price" id="products-price" data-products-price="${price}">${formatNumber(price)}</span>&nbsp;₽`;
-  } else if (count > '1' && count < '5') {
-    productsTitle.innerHTML = `<span class="products__count" id="products-count" data-count="${count}">${count}</span> товара на сумму <span class="products__price" id="products-price" data-products-price=${price}>${formatNumber(price)}</span>&nbsp;₽`;
-  } else if (count >= '5') {
-    productsTitle.innerHTML = `<span class="products__count" id="products-count" data-count="${count}">${count}</span> товаров на сумму <span class="products__price" id="products-price" data-products-price=${price}>${formatNumber(price)}</span>&nbsp;₽`;
+// Меняет слово 'товар' в заголовке карточек при разном количестве товаров
+const changeWord = (count) => {
+  const countProcent = count % 100;
+  const countProcentTen = countProcent % 10;
+
+  if (countProcent >= 10 && countProcent <= 19) {
+    productsWord.textContent = 'товаров';
+    return;
   }
+
+  if (countProcentTen === 1) {
+    productsWord.textContent = 'товар';
+    return;
+  }
+
+  if (countProcentTen >= 2 && countProcentTen <= 4) {
+    productsWord.textContent = 'товара';
+    return;
+  }
+
+  if (countProcentTen === 0 || (countProcentTen >= 5 && countProcentTen <= 9)) {
+    productsWord.textContent = 'товаров';
+    return;
+  }
+}
+
+// Меняет заголовок у списка карточек товаров
+const changesTitle = (count, price) => {
+  productsCounts.textContent = count;
+  productsPrice.textContent = formatNumber(price);
+  changeWord(count);
 }
 
 // Подсчитывает общую стоимость товара в карточке
@@ -143,5 +166,7 @@ export {
   pricePromo,
   totalPriceAll,
   priceDelivery,
-  getItemPrice
+  getItemPrice,
+  productsTitle,
+  productsTitleText
 };

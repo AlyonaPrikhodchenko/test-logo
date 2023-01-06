@@ -11,13 +11,18 @@ import {
   pricePromo,
   totalPriceAll,
   priceDelivery,
-  getItemPrice
+  getItemPrice,
+  productsTitleText,
+  productsTitle
 } from './util.js';
 
 const recoverTemplate = document.querySelector('#recover').content.querySelector('.card__recover');
+const titleTemplate = document.querySelector('#basket-empty').content.querySelector('.products__legend-empty');
 
 const restoresCard = () => {
   const cards = Array.from(productsList.children);
+
+  const titleElement = titleTemplate.cloneNode(true);
 
   if (cards) {
     let totalCost = 0;
@@ -25,11 +30,9 @@ const restoresCard = () => {
 
     cards.forEach(card => {
       const recoverElement = recoverTemplate.cloneNode(true);
-      const cardName = recoverElement.querySelector('#card-name');
       const recoverButton = recoverElement.querySelector('.card__recover-button');
       const deleteForeverButton = recoverElement.querySelector('.card__recover-delete');
 
-      const cardTitle = card.querySelector('.card__title');
       const deleteButton = card.querySelector('.card__delete');
       const cardContent = card.querySelector('.card__content');
       const input = card.querySelector('.card__result-quantity-value');
@@ -42,21 +45,13 @@ const restoresCard = () => {
           productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) - Number(input.dataset.totalPriceOld);
           changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice);
 
-          if (productsCounts.dataset.count === '0') {
+          if (Number(productsCounts.dataset.count) === 0) {
             submitButton.disabled = true;
 
             priceDelivery.dataset.priceDelivery = '0';
             priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
 
             pricePromo.dataset.pricePromo = '0';
-            pricePromo.textContent = formatNumber(pricePromo.dataset.pricePromo);
-          } else {
-            submitButton.disabled = false;
-
-            priceDelivery.dataset.priceDelivery = '200';
-            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
-
-            pricePromo.dataset.pricePromo = '500';
             pricePromo.textContent = formatNumber(pricePromo.dataset.pricePromo);
           }
 
@@ -72,10 +67,9 @@ const restoresCard = () => {
           totalPriceAll.dataset.priceTotalAll = Number(totalPrice.dataset.total) + Number(priceDelivery.dataset.priceDelivery) - Number(priceDiscounts.dataset.priceDiscounts);
           totalPriceAll.textContent = formatNumber(totalPriceAll.dataset.priceTotalAll);
 
-          if (cardName) {
-            cardName.textContent = cardTitle.textContent;
-          } else {
-            cardName.textContent = 'Наименование товара';
+          if (Number(productsCounts.dataset.count) <= 0) {
+            productsTitle.removeChild(productsTitleText);
+            productsTitle.appendChild(titleElement);
           }
 
           card.appendChild(recoverElement);
@@ -84,22 +78,14 @@ const restoresCard = () => {
 
       if (recoverButton) {
         recoverButton.addEventListener('click', () => {
-          card.appendChild(cardContent);
           card.removeChild(recoverElement);
+          card.appendChild(cardContent);
 
           productsCounts.dataset.count = Number(productsCounts.dataset.count) + Number(input.value);
           productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) + Number(input.dataset.totalPriceOld);
-          changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice)
+          changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice);
 
-          if (productsCounts.dataset.count === '0') {
-            submitButton.disabled = true;
-
-            priceDelivery.dataset.priceDelivery = '0';
-            priceDelivery.textContent = formatNumber(priceDelivery.dataset.priceDelivery);
-
-            pricePromo.dataset.pricePromo = '0';
-            pricePromo.textContent = formatNumber(pricePromo.dataset.pricePromo);
-          } else {
+          if (Number(productsCounts.dataset.count) > 0) {
             submitButton.disabled = false;
 
             priceDelivery.dataset.priceDelivery = '200';
@@ -120,6 +106,12 @@ const restoresCard = () => {
 
           totalPriceAll.dataset.priceTotalAll = Number(totalPrice.dataset.total) + Number(priceDelivery.dataset.priceDelivery) - Number(priceDiscounts.dataset.priceDiscounts);
           totalPriceAll.textContent = formatNumber(totalPriceAll.dataset.priceTotalAll);
+
+          if (productsTitle.contains(titleElement)) {
+            productsTitle.removeChild(titleElement);
+            productsTitle.appendChild(productsTitleText);
+          }
+
         })
       }
 
