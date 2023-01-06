@@ -1,10 +1,11 @@
-let mediaQueries = window.matchMedia('(max-width: 767px)');
+const mediaQueries = window.matchMedia('(max-width: 767px)');
+
+const headerBurger = document.querySelector('.header__burger');
+const navigation = document.querySelector('.navigation');
+const userWrapper = document.querySelector('.header__user-menu');
+const userMenu = document.querySelector('.user-menu');
 
 const opensBurgerMenu = (media) => {
-  const headerBurger = document.querySelector('.header__burger');
-  const navigation = document.querySelector('.navigation');
-  const userWrapper = document.querySelector('.header__user-menu');
-  const userMenu = document.querySelector('.user-menu');
 
   if (headerBurger && navigation) {
     if (media.matches) {

@@ -9,8 +9,9 @@ import {initMap} from "./modules/yandex-map.js";
 import {validationForm} from "./modules/validation-form.js"
 import {addsButtonPromo} from "./modules/adds-button.js";
 
-mediaQueries.addEventListener('change', opensBurgerMenu);
 opensBurgerMenu(mediaQueries);
+mediaQueries.addEventListener('change', opensBurgerMenu);
+
 
 initCounter();
 restoresCard();

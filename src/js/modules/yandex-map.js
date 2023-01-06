@@ -28,7 +28,7 @@ const initMap = () => {
       if (media.matches) {
         let widthMargins = document.body.clientWidth / 9;
         let widthMap = document.body.clientWidth - widthMargins;
-        console.log(widthMap)
+
         for (let el of ymapElements) {
           el.style.width = `${widthMap}px`
         }
