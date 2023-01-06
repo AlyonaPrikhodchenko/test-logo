@@ -1,4 +1,5 @@
 import {
+  bagCounter,
   changesTitle,
   formatNumber,
   getItemPrice,
@@ -88,6 +89,7 @@ const initCounter = () => {
           disabledButton()
           // Считаем общее количество товаров при клике на +
           productsCounts.dataset.count = Number(productsCounts.dataset.count) + 1;
+          bagCounter.textContent = productsCounts.dataset.count;
 
           // Считаем общую сумму при клике на +
           productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) + Number(input.dataset.oldPrice);
@@ -121,6 +123,7 @@ const initCounter = () => {
           disabledButton()
           // Считаем общее количество товаров при клике на -
           productsCounts.dataset.count = Number(productsCounts.dataset.count) - 1;
+          bagCounter.textContent = productsCounts.dataset.count;
 
           // Считаем общую сумму при клике на -
           productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) - Number(input.dataset.oldPrice);

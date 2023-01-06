@@ -30,6 +30,8 @@ const pricePromo = document.querySelector('#price-promo');
 const totalPriceAll = document.querySelector('#total-price');
 const priceDelivery = document.querySelector('#price-delivery');
 
+const bagCounter = document.querySelector('.bag__counter');
+
 // Блокирует кнопку во время отправки формы
 const blockSubmitButton = () => {
   submitButton.disabled = true;
@@ -168,5 +170,6 @@ export {
   priceDelivery,
   getItemPrice,
   productsTitle,
-  productsTitleText
+  productsTitleText,
+  bagCounter
 };

@@ -13,7 +13,8 @@ import {
   priceDelivery,
   getItemPrice,
   productsTitleText,
-  productsTitle
+  productsTitle,
+  bagCounter
 } from './util.js';
 
 const recoverTemplate = document.querySelector('#recover').content.querySelector('.card__recover');
@@ -44,6 +45,7 @@ const restoresCard = () => {
           productsCounts.dataset.count = Number(productsCounts.dataset.count) - Number(input.value);
           productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) - Number(input.dataset.totalPriceOld);
           changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice);
+          bagCounter.textContent = productsCounts.dataset.count;
 
           if (Number(productsCounts.dataset.count) === 0) {
             submitButton.disabled = true;
@@ -84,6 +86,7 @@ const restoresCard = () => {
           productsCounts.dataset.count = Number(productsCounts.dataset.count) + Number(input.value);
           productsPrice.dataset.productsPrice = Number(productsPrice.dataset.productsPrice) + Number(input.dataset.totalPriceOld);
           changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice);
+          bagCounter.textContent = productsCounts.dataset.count;
 
           if (Number(productsCounts.dataset.count) > 0) {
             submitButton.disabled = false;
@@ -129,6 +132,7 @@ const restoresCard = () => {
     productsCounts.dataset.count = totalCount;
     productsPrice.dataset.productsPrice = totalCost;
     changesTitle(productsCounts.dataset.count, productsPrice.dataset.productsPrice);
+    bagCounter.textContent = productsCounts.dataset.count;
   }
 }
 
