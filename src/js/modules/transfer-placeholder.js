@@ -8,6 +8,8 @@ const transfersPlaceholder = () => {
       let placeholder = contactsPlaceholders[i];
 
       input.addEventListener('input', () => {
+        input.classList.add('contacts__input--active');
+
         if (input.value.length > 0) {
           placeholder.classList.add('contacts__placeholder--hidden');
           if (input.classList.contains('contacts__input--address')) {
@@ -15,11 +17,14 @@ const transfersPlaceholder = () => {
           }
         } else {
           placeholder.classList.remove('contacts__placeholder--hidden');
-
           if (input.classList.contains('contacts__input--address')) {
             text.classList.remove('contacts__button-text--js');
           }
         }
+      })
+
+      input.addEventListener('blur', (e) => {
+        e.target.classList.remove('contacts__input--active');
       })
     }
   }

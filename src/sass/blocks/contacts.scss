@@ -107,6 +107,10 @@
     padding-right: 200px;
   }
 
+  &--active {
+    border-color: $color-dark-gray;
+  }
+
   @media (max-width: $tel) {
     padding: 12px 55px 12px 16px;
   }
